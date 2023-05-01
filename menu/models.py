@@ -3,11 +3,11 @@ from django.db import models
 # Create your models here.
 
 
-class Customer(models.Model):
+class Pizza(models.Model):
     pass
 
 
-class Pizza(models.Model):
+class Customer(models.Model):
     pass
 
 
