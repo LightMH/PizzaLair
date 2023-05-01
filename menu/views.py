@@ -2,4 +2,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
-    return  HttpResponse('Hello pizza man in index view')
+    return  HttpResponse('Hello menu man in index view')
