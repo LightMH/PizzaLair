@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<header>New Account</header>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/new_account.css">
+    <div class="createAccount">
+    <h2>Eldey - Búa til nýjan aðgang</h2>
+    <form>
+          <div class="form-group">
+            <label for="username">Notendanafn</label>
+            <input type="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Sláðu inn notendanafn">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Símanúmer</label>
+            <input type="phoneNumber" class="form-control" id="phoneNumber" aria-describedby="phonenumberHelp" placeholder="Sláðu inn símanúmer">
+        </div>
+        <div class="form-group">
+        <label for="password">Lykilorð</label>
+        <input type="password" class="form-control" id="password" placeholder="Sláðu inn lykilorð">
+        </div>
+        <div class="form-image-upload">
+            <label for="formFile" class="form-label">Veldu notandamynd (valkvæmt)</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+    <button type="submit" class="btn btn-primary">Búa til</button>
+    </form>
+    </div>
+{% endblock %}
