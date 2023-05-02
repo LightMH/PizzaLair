@@ -1,0 +1,12 @@
+.offers {
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+}
+
+.offerdisplay {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-gap: 30px;
+}
