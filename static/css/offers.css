@@ -1,0 +1,17 @@
+.offers {
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    font-family: "Book Antiqua";
+    margin: auto;
+    width: 30%;
+}
+
+.offerdisplay {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-gap: 30px;
+    margin: auto;
+}
+
