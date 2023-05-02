@@ -10,3 +10,6 @@
     grid-template-columns: repeat(3, 300px);
     grid-gap: 30px;
 }
+.btn-group {
+    background-color: crimson;
+}
