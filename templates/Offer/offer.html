@@ -1,5 +1,51 @@
 
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Offer site</h2>
+    <link rel="stylesheet" href="/static/css/offers.css">
+    <div class="offersOnSite">
+    <div class="offers">
+    <h2>Tilboð</h2>
+    </div>
+    <div class="offerdisplay">
+    <div class="col">
+          <div class="card shadow-sm">
+            <img src="/static/images/Offer_img.png" alt="Offer image">
+            <div class="card-body">
+              <p class="card-text"><b>Tvennutilboð</b><br> Tvær stórar pizzur af matseðli á 4000kr.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Panta</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+          <img src="/static/images/Offer_img.png" alt="Offer image">
+            <div class="card-body">
+              <p class="card-text"><b>Hóptilboð</b><br> 3 stórar pizzur af matseðli á 5000kr.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Panta</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+          <img src="/static/images/Offer_img.png" alt="Offer image">
+            <div class="card-body">
+              <p class="card-text"><b>Sparitilboð</b><br> 3 pizzur af matseðli valdar mánaðarlega á 2500kr.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Panta</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
 {% endblock %}
