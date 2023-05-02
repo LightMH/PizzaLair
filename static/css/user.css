@@ -1,0 +1,26 @@
+.signInHeader {
+    color: darkred;
+    font-family: "Book Antiqua";
+    font-size: xx-large;
+}
+.signInBtn {
+    width: 200px;
+    height: fit-content;
+    border-radius: 20px;
+    border-color: darkred;
+    font-family: "Book Antiqua";
+}
+
+.form-floating {
+    margin-top: 20px;
+}
+
+.signUpBtn {
+    width: 200px;
+    float: right;
+    height: fit-content;
+    border-radius: 20px;
+    border-color: darkred;
+    font-family: "Book Antiqua";
+}
+
