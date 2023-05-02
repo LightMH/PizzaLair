@@ -1,0 +1,12 @@
+.homeContainer {
+    margin-left: 160px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.container h1 {
+  margin-left: 410px;
+  font-family: "Book Antiqua";
+  color: darkred;
+}
