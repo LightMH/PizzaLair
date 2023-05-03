@@ -3,5 +3,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def index(request):
+def cart_index(request):
     return render(request, 'cart/cart.html')
+
+def checkout_index(request):
+    return render(request, 'cart/checkout_process.html')
