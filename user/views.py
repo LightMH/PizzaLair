@@ -6,6 +6,6 @@ from django.http import HttpResponse
 def user_index(request):
     return render(request, 'user/user.html')
 
-
 def new_user_index(request):
     return render(request, 'user/new_account.html')
+
