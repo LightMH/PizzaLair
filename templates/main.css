@@ -1,3 +1,7 @@
  .navbar-brand {
      color: crimson;
  }
+
+ .nav-item {
+     width: 60px;
+ }
