@@ -4,14 +4,15 @@ from django.db import models
 
 
 class Pizza(models.Model):
-    pass
+    name = models.CharField(max_length=140)
+    size = models.CharField(max_length=140, blank=True)
+    toppings = models.CharField(max_length=140, blank=True)
 
 
-class Toppings(models.Model):
-    pass
+class Details(models.Model):
+    description = models.CharField(max_length=255)
 
 
-class Type(models.Model):
-    pass
+
 
 
