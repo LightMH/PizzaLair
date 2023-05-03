@@ -1,41 +1,24 @@
 from django.db import models
-
+from cart.models import Order
+from offer.models import Offers
 # Create your models here.
 
 
-class Pizza(models.Model):
-    pass
-
-
-class Customer(models.Model):
-    pass
-
-
 class Toppings(models.Model):
-    pass
+    name = models.CharField(max_length=255, blank=True)
 
 
-class Offers(models.Model):
-    pass
+class Pizza(models.Model):
+    name = models.CharField(max_length=255, blank=True)
+    size = models.CharField(max_length=255, blank=True)
+    toppings = models.ManyToManyField(Toppings)
+    type = models.CharField(max_length=255, blank=True)
+    image = models.CharField(max_length=9999, blank=True)
+    order = models.ManyToManyField(Order, blank=True)
+    offer = models.ManyToManyField(Offers, blank=True)
 
 
-class Order(models.Model):
-    pass
-
-
-class ContactInformation(models.Model):
-    pass
-
-
-class CardInformation(models.Model):
-    pass
-
-
-class Cart(models.Model):
-    pass
-
-
-class Type(models.Model):
-    pass
-
+class Details(models.Model):
+    description = models.CharField(max_length=255, blank=True)
+    pizza = models.OneToOneField(Pizza, on_delete=models.CASCADE)
 
