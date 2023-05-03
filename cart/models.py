@@ -3,15 +3,12 @@ from django.db import models
 # Create your models here.
 
 
-# class Cart(models.Model):
-#    pass
+class Order(models.Model):
+    pizza = models.CharField(max_length=140)
+    price = models.FloatField(blank=True)
 
 
-# class Order(models.Model):
-#   pass
-
-
-# class CardInformation(models.Model):
-#    pass
+class PaymentInformation(models.Model):
+    payment_method = models.CharField(max_length=140)
 
 
