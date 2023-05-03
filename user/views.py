@@ -3,5 +3,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def index(request):
+def user_index(request):
     return render(request, 'user/user.html')
+
+
+def new_user_index(request):
+    return render(request, 'user/new_account.html')
