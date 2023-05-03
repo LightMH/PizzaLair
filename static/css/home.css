@@ -10,3 +10,10 @@
   font-family: "Book Antiqua";
   color: darkred;
 }
+
+.home_container {
+    background-image: url("/static/images/PizzaLair_front_page.png");
+    background-size: 100%;
+    height: 800px;
+    width: 100%;
+}

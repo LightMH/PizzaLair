@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="/static/css/checkout.css">
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Upplýsingar um tengilið</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="fullName" class="form-label">Fullt nafn</label>
+              <input type="text" class="form-control" id="fullName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Þarft að slá inn fullt nafn.
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="streetName" class="form-label">Götuheiti</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" id="streetName" placeholder="" required>
+              <div class="invalid-feedback">
+                  Þarft að slá inn götuheiti.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="streetNumber" class="form-label">Húsanúmer</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" id="streetNumber" placeholder="" required>
+              <div class="invalid-feedback">
+                  Þarft að slá inn húsanúmer.
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-12">
+              <label for="city" class="form-label">Borg</label>
+              <input type="text" class="form-control" id="city" placeholder="" required>
+              <div class="invalid-feedback">
+                Þarf að slá inn borg.
+              </div>
+            </div>
+
+
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Land</label>
+              <select class="form-select" id="country" required>
+                <option value="">Velja...</option>
+                <option>Ísland</option>
+                <option>Noregur</option>
+                 <option>Svíþjóð</option>
+              </select>
+              <div class="invalid-feedback">
+                Vinsamlegast veldur 1 land.
+              </div>
+            </div>
+
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Greiðsla</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="payAtPickUp" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="credit">Borga við afhendingu</label>
+            </div>
+            <div class="form-check">
+              <input id="card" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="paypal">Borga með korti</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Nafn korthafa</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-body-secondary">Fullt nafn eins og á kortinu</small>
+              <div class="invalid-feedback">
+                Þarft að slá inn nafn korthafa.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Kortanúmer</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                Þarft að slá inn kortanúmer.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Gildistími</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Þarft að slá inn gildistíma.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Þarf að slá inn CVV.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+          <button class="w-100 btn btn-primary btn-lg" id="continueBtn" type="submit" >Klára pöntun</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
