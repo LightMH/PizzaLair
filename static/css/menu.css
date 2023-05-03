@@ -10,12 +10,13 @@
 
 .menuDisplay {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 300px);
     grid-gap: 30px;
     margin: auto;
 }
 
-.pizzaImg {
-    width: 300px;
-    height: 300px;
+.sizeAndPriceTable{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 140%;
 }
