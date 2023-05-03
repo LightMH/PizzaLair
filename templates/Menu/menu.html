@@ -1,17 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
     <link rel="stylesheet" href="/static/css/menu.css">
-    <div class="menuHeader">
-    <h2>Eldey - Matseðill</h2>
+    <div class="offersOnSite">
+    <div class="menu">
+    <h2>Matseðill</h2>
     </div>
-        <div class="menuDisplay">
+    <div class="menuDisplay">
     <div class="col">
           <div class="card shadow-sm">
-              <button class="pizzaImgBtn">
-              <img class="pizzaImg" src="/static/images/Offer_img.png" alt="Offer image">
-            </button>
+            <img src="/static/images/Offer_img.png" alt="Offer image">
             <div class="card-body">
               <p class="card-text"><b>Margarita</b><br>Sósa, mozzarella, basilika.</p>
+                <table class="sizeAndPriceTable">
+                      <tr>
+                        <th>Stærð</th>
+                        <th>Verð</th>
+                      </tr>
+                      <tr>
+                        <td>Stór</td>
+                        <td>3590 kr</td>
+                      </tr>
+                      <tr>
+                        <td>Miðstærð</td>
+                        <td>2780 kr</td>
+                      </tr>
+                      <tr>
+                        <td>Lítil</td>
+                        <td>2230 kr</td>
+                      </tr>
+                    </table>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Panta</button>
@@ -20,32 +37,6 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <button class="pizzaImgBtn">
-              <img class="pizzaImg" src="/static/images/Offer_img.png" alt="Offer image">
-            </button>
-            <div class="card-body">
-              <p class="card-text"><b>Hawaiian</b><br>Sósa, skinka, ananas og mozzarella.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Panta</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <button class="pizzaImgBtn">
-              <img class="pizzaImg" src="/static/images/Offer_img.png" alt="Offer image">
-            </button>
-            <div class="card-body">
-                <p class="card-text"><b>Vegan</b><br>Sósa, veganostur, sveppir, laukur, <br>tómatar og veganhakk.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Panta</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
+    </div>
+    </div>
 {% endblock %}
