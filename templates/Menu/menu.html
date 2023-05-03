@@ -5,12 +5,15 @@
     <div class="menuHeader">
     <h2>Matseðill</h2>
     </div>
-    <div class="menuDisplay">
-    <div class="col">
+    {% for pizza in pizza_list %}
+    <div class="flex-container">
+    <div class="card-container">
+          <a href='{% url 'details-index' %}'>
+              <img class='img-container' src='{{pizza.image}}' alt='Menu_image'>
+          </a>
           <div class="card shadow-sm">
-            <img src="/static/images/Offer_img.png" alt="Menu image">
             <div class="card-body">
-              <p class="card-text"><b>Margarita</b><br>Sósa, mozzarella, basilika.</p>
+                <h4 class="card-text">{{pizza.name}}</h4>
                 <table class="sizeAndPriceTable">
                       <tr>
                         <th>Stærð</th>
@@ -28,7 +31,7 @@
                         <td>Lítil</td>
                         <td>2230 kr</td>
                       </tr>
-                    </table>
+                </table>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Panta</button>
@@ -37,6 +40,7 @@
             </div>
           </div>
         </div>
+        {% endfor %}
     </div>
     </div>
 {% endblock %}
