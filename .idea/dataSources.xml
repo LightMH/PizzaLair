@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://35.228.122.148:5432/pizza-menu-db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="postgres@35.228.122.148" uuid="53ba575b-6092-45f0-a84d-0cf9fb61081d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://35.228.122.148:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

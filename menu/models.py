@@ -17,6 +17,9 @@ class Pizza(models.Model):
     order = models.ManyToManyField(Order, blank=True)
     offer = models.ManyToManyField(Offers, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Details(models.Model):
     description = models.CharField(max_length=255, blank=True)
