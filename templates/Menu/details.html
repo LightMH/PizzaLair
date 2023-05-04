@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Details site</h2>
+    <h2>Nánari lýsing</h2>
+    <h1>{{ pizza.name }}</h1>
+    <p>{{ pizza.description }}</p>
+    <p>${{ pizza.price }}</p>
+    <img src="{{ pizza.image }}" class="PizzaImg">
+    <a href="{{ pizza.id }}">ID</a>
 {% endblock %}
