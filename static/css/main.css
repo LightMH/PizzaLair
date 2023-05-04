@@ -1,1 +1,33 @@
 
+
+
+.cart_nav {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    mix-blend-mode: multiply;
+}
+
+.profile_nav {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 50px;
+    mix-blend-mode: multiply;
+    border-color: black;
+}
+
+.navbar-brand:hover {
+    border-bottom: 2px grey solid;
+}
+.nav_link:hover {
+    border-bottom: 2px grey solid;
+}
+.nav_item:hover {
+    border-bottom: 2px grey solid;
+}
