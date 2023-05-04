@@ -11,7 +11,6 @@ pizzas = [
     {"name": "Hawaiian", "price": "3590 kr"}
 ]
 
-
 def index(request):
     pizza_list = db_talker.get_all_pizzas()
     return render(request, 'menu/menu.html', context={'pizza_list': pizza_list})
