@@ -1,26 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<link rel="stylesheet" href="/static/css/new_account.css">
+    <link rel="stylesheet" href="/static/css/new_account.css">
     <div class="createAccount">
-    <h2>Eldey - Búa til nýjan aðgang</h2>
-    <form>
-          <div class="form-group">
-            <label for="username">Notendanafn</label>
-            <input type="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Sláðu inn notendanafn">
-        </div>
-        <div class="form-group">
-            <label for="phoneNumber">Símanúmer</label>
-            <input type="phoneNumber" class="form-control" id="phoneNumber" aria-describedby="phonenumberHelp" placeholder="Sláðu inn símanúmer">
-        </div>
-        <div class="form-group">
-        <label for="password">Lykilorð</label>
-        <input type="password" class="form-control" id="password" placeholder="Sláðu inn lykilorð">
-        </div>
-        <div class="form-image-upload">
-            <label for="formFile" class="form-label">Veldu notandamynd (valkvæmt)</label>
-            <input class="form-control" type="file" id="formFile">
-        </div>
-    <button type="submit" class="btn btn-primary">Búa til</button>
-    </form>
+        <h2>Eldey - Búa til nýjan aðgang</h2>
+        <form class="form" method="post" action="{% url 'new-user-index' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Notendanafn</label>
+                <input type="username" class="form-control" id="username" name="username"
+                       aria-describedby="usernameHelp" placeholder="Sláðu inn notendanafn">
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Símanúmer</label>
+                <input type="phoneNumber" class="form-control" id="phoneNumber" name="phoneNumber"
+                       aria-describedby="phonenumberHelp" placeholder="Sláðu inn símanúmer">
+            </div>
+            <div class="form-group">
+                <label for="password">Lykilorð</label>
+                <input type="password" class="form-control" id="password" name="password"
+                       placeholder="Sláðu inn lykilorð">
+            </div>
+            <div class="form-image-upload">
+                <label for="formFile" class="form-label">Veldu notandamynd (valkvæmt)</label>
+                <input class="form-control" name="profileImg" type="file" id="formFile">
+            </div>
+            <input type="submit" class="form-control btn btn-primary" value="Búa til">
+        </form>
     </div>
 {% endblock %}
