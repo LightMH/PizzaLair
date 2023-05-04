@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ pizza.name }}</h1>
+    <p>{{ pizza.description }}</p>
+    <p>${{ pizza.price }}</p>
+    <img src="{{ pizza.imgage }}" class="pizzaImg" alt="pizza image">
+{% endblock %}
