@@ -7,9 +7,11 @@
     </div>
     {% for pizza in pizza_list %}
 
+
     <div class="flex-container">
     <div class="card-container">
           <a href='{% url 'id-index' pizza.id %}'>
+
               <img class='img-container' src='{{pizza.image}}' alt='Menu_image'>
           </a>
           <div class="card shadow-sm">
