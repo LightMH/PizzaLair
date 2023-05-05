@@ -6,6 +6,8 @@ from django.db import models
 class CustomerAccount(models.Model):
     username = models.CharField(max_length=255, blank=True)
     password = models.CharField(max_length=255, blank=True)
+    phone_number = models.CharField(max_length=8, blank=True)
+    profile_image = models.ImageField(blank=True)
     admin = models.BooleanField(blank=True)
 
 
