@@ -2,60 +2,71 @@
 {% block content %}
     <link rel="stylesheet" href="/static/css/menu.css">
     <div class="menuSite">
-    <div class="menuHeader">
-    <h2>Matseðill</h2>
-    </div>
-    <div class="filters">
-    <div class="menuFilter">
-        <h5 id="filterLabel">Sía matseðil eftir:</h5>
-          <button class="btn btn-success rounded-pill px-3" type="button" id="vegan">Vegan</button>
-        <button class="btn btn-success rounded-pill px-3" type="button" id="vegetarian" style="background-color: mediumseagreen">Grænmetis</button>
-          <button class="btn btn-danger rounded-pill px-3" type="button" id="spicy" style="background-color: red">Sterk</button>
-    </div>
-    <div class="menuOrderBy">
-        <h5>Raða matseðli eftir:</h5>
-        <button class="btn btn-success rounded-pill px-3" type="button" id="pizzaName" style="background-color: crimson">Nafn</button>
-        <button class="btn btn-danger rounded-pill px-3" type="button" id="price" style="background-color: crimson" >Verð</button>
-    </div>
-    </div>
-    {% for pizza in pizza_list %}
-
-    <div class="flex-container">
-    <div class="card-container">
-          <a href='{% url 'id-index' pizza.id %}'>
-
-              <img class='img-container' src='{{pizza.image}}' alt='Menu_image'>
-          </a>
-          <div class="card shadow-sm">
-            <div class="card-body">
-                <h4 class="card-text">{{pizza.name}}</h4>
-                <table class="sizeAndPriceTable">
-                      <tr>
-                        <th>Stærð</th>
-                        <th>Verð</th>
-                      </tr>
-                      <tr>
-                        <td>Stór</td>
-                        <td>3590 kr</td>
-                      </tr>
-                      <tr>
-                        <td>Miðstærð</td>
-                        <td>2780 kr</td>
-                      </tr>
-                      <tr>
-                        <td>Lítil</td>
-                        <td>2230 kr</td>
-                      </tr>
-                </table>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" id="orderBtn" class="btn btn-sm btn-outline-secondary">Panta</button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="menuHeader">
+            <h2>Matseðill</h2>
         </div>
-        {% endfor %}
-    </div>
+        <div class="filters">
+            <div class="menuFilter">
+                <h5 id="filterLabel">Sía matseðil eftir:</h5>
+                <button class="btn btn-success rounded-pill px-3" type="button" id="vegan">Vegan</button>
+                <button class="btn btn-success rounded-pill px-3" type="button" id="vegetarian"
+                        style="background-color: mediumseagreen">Grænmetis
+                </button>
+                <button class="btn btn-danger rounded-pill px-3" type="button" id="spicy" style="background-color: red">
+                    Sterk
+                </button>
+            </div>
+            <div class="menuOrderBy">
+                <h5>Raða matseðli eftir:</h5>
+                <button class="btn btn-success rounded-pill px-3" type="button" id="pizzaName"
+                        style="background-color: crimson">Nafn
+                </button>
+                <button class="btn btn-danger rounded-pill px-3" type="button" id="price"
+                        style="background-color: crimson">Verð
+                </button>
+            </div>
+        </div>
+        <div class="pizzas">
+            {% for pizza in pizza_list %}
+
+                <div class="flex-container">
+                <div class="card-container">
+                    <a href='{% url 'id-index' pizza.id %}'>
+
+                        <img class='img-container' src='{{ pizza.image }}' alt='Menu_image'>
+                    </a>
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-text">{{ pizza.name }}</h4>
+                            <table class="sizeAndPriceTable">
+                                <tr>
+                                    <th>Stærð</th>
+                                    <th>Verð</th>
+                                </tr>
+                                <tr>
+                                    <td>Stór</td>
+                                    <td>3590 kr</td>
+                                </tr>
+                                <tr>
+                                    <td>Miðstærð</td>
+                                    <td>2780 kr</td>
+                                </tr>
+                                <tr>
+                                    <td>Lítil</td>
+                                    <td>2230 kr</td>
+                                </tr>
+                            </table>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" id="orderBtn" class="btn btn-sm btn-outline-secondary">Panta
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}
