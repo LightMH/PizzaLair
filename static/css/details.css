@@ -20,6 +20,7 @@
     width: 300px;
 }
 
+
 .pizzaDescription {
     margin-top: 20px;
 }
@@ -28,6 +29,7 @@
     font-weight: bold;
     font-size: xx-large;
 }
+
 .descriptionContainer {
     width: 350px;
     height: fit-content;
