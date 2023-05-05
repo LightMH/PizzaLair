@@ -14,6 +14,9 @@
   width: 140%;
 }
 
+h2{
+    margin-top: 20px;
+}
 
 .flex-container {
     display:flex;
@@ -24,12 +27,28 @@
     margin-top: 20px;
     width: 300px;
     height: 300px;
-    margin-bottom: 50%;
+    margin-bottom: 30%;
     margin-right: 20px;
 }
-
 
 .img-container {
     width: 300px;
     height: 300px;
+}
+
+.menuOrderBy {
+    margin-top: 20px;
+}
+
+.menuSite {
+    margin-left: 25px;
+}
+.filters {
+    display: inline-flex;
+    justify-content: normal;
+}
+
+.menuFilter {
+    margin-right: 70px;
+    margin-top: 20px;
 }

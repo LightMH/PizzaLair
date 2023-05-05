@@ -1,0 +1,68 @@
+.descriptionHeader {
+    border-style: solid;
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
+    width: 200px;
+    height: fit-content;
+    text-align: center;
+    font-family: "Book Antiqua";
+    font-size: xx-large;
+    margin-left: 45%;
+    margin-bottom: 20px;
+}
+
+
+.pizzaInfo {
+    font-family: "Book Antiqua";
+    font-size: x-large;
+    float: right;
+    width: 300px;
+}
+
+.pizzaDescription {
+    margin-top: 20px;
+}
+
+.pizzaName {
+    font-weight: bold;
+    font-size: xx-large;
+}
+.descriptionContainer {
+    width: 350px;
+    height: fit-content;
+    float: right;
+    text-align: left;
+    margin-right: 100px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: darkred;
+}
+
+
+.pizzaImgDiv {
+    margin-left: 100px;
+    width: 400px;
+    height: 400px;
+}
+
+.pizzaImg {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.addToCartBtn {
+    border-style: solid;
+    border-radius: 20px;
+    border-color: darkred;
+    width: 120px;
+    height: 60px;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.addToCartBtn:hover {
+    background-color: lightgray;
+}

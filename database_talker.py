@@ -1,4 +1,6 @@
+
 from menu.models import Pizza, Toppings, Details, Order, Offers
+
 
 
 def get_all_pizzas():
@@ -8,3 +10,4 @@ def get_all_pizzas():
 
 def get_pizza_by_id(id):
     return Pizza.objects.filter()
+
