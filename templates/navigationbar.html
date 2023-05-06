@@ -25,12 +25,13 @@
         <button class="btn btn-outline-success" type="submit">Leita</button>
       </form>
         <a class="nav-item">
-          <a class="nav-link" href="{% url 'cart-index' %}"><img class="cart_nav" src={% static "images/cart_icon.png" %}></a>
-        </a>
+          <a class="cart" href="{% url 'cart-index' %}"><span>0</span><img class="cart_nav" src={% static "images/cart_icon.png" %}></a>
+    
         <a class="nav-item">
-          <a class="nav-link" href="{% url 'user-index' %}"><img class="profile_nav" src={% static "images/profile_icon.png" %}></a>
+          <a class="cart" href="{% url 'user-index' %}"><img class="profile_nav" src={% static "images/profile_icon.png" %}> </a>
         </a>
     </div>
   </div>
 </nav>
+<script  src="/static/js/navbar_cart.js"></script> 
 </head>
