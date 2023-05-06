@@ -8,11 +8,15 @@
     <div class="filters">
         <div class="menuFilter">
             <h5 id="filterLabel">Sía matseðil eftir:</h5>
-            <button class="btn btn-success rounded-pill px-3" type="button" id="vegan">Vegan</button>
-            <button class="btn btn-success rounded-pill px-3" type="button" id="vegetarian"
+            <button class="btn btn-success rounded-pill px-3" type="button" id="veganBtn" onclick="menuFilter('Vegan')">
+                Vegan
+            </button>
+            <button class="btn btn-success rounded-pill px-3" type="button" id="vegetarianBtn"
+                    onclick="menuFilter('Grænmetis')"
                     style="background-color: mediumseagreen">Grænmetis
             </button>
-            <button class="btn btn-danger rounded-pill px-3" type="button" id="spicy" style="background-color: red">
+            <button class="btn btn-danger rounded-pill px-3" type="button" id="spicyBtn" onclick="menuFilter('Sterk')"
+                    style="background-color: red">
                 Sterk
             </button>
         </div>
@@ -30,7 +34,7 @@
         {% for pizza in pizza_list %}
 
             <div class="flex-container">
-            <div class="card-container">
+            <div class="card-container" data-filter-tag="{{ pizza.pizza.type }}">
                 <a href='{% url 'id-index' pizza.pizza.id %}'>
 
                     <img class='img-container' src='{{ pizza.pizza.image }}' alt='Menu_image'>

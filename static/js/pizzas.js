@@ -24,4 +24,19 @@ $(document).ready(function () {
 
         })
     })
-})
+});
+
+
+const menuFilter = (filter) => {
+    const pizzaList = document.querySelectorAll('.card-container')
+    pizzaList.forEach((pizza) => {
+        const tag = pizza.dataset['filterTag']
+        console.log(tag)
+        if (tag === filter) {
+            pizza.style.display = 'Block';
+        } else {
+            pizza.style.display = 'None';
+        }
+    })
+}
+
