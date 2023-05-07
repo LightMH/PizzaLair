@@ -40,3 +40,8 @@ const menuFilter = (filter) => {
     })
 }
 
+
+const orderBy = (filter) => {
+    const pizzaList = document.querySelectorAll('.card-container')
+    
+}
