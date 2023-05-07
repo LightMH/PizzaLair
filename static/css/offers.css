@@ -15,3 +15,41 @@
     margin: auto;
 }
 
+.img-container {
+    width: 300px;
+}
+
+#singleOfferImg {
+    width: 200px;
+    height: 200px;
+}
+
+.form-select {
+    width: 40%;
+}
+
+.OfferName {
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.descriptionContainer {
+    font-family: "Book Antiqua";
+}
+
+.offerInfo {
+    margin-left: 20px;
+}
+
+.addToCartBtn {
+    background-color: crimson;
+    color: white;
+    border-color: darkred;
+    margin-top: 20px;
+}
+
+.form-label {
+    margin-top: 10px;
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <link rel="stylesheet" href="/static/css/offers.css">
+    <div class="descriptionContainer">
+        <H2 class="OfferName">{{ offer.name }}</H2>
+        <div class="offerInfo">
+            <h3 class="offerDescription">{{ offer.description }}</h3>
+            <img src="/static/images/Offer_img.png" alt="Offer Image" class="singleOfferImg" id="singleOfferImg">
+            <div class="pizzasInOffer">
+                <label for="pizza1" class="form-label">Pizza 1</label>
+                <select class="form-select" id="pizza1" required>
+                    <option value="">Velja...</option>
+                    {% for pizza in pizzas %}
+                        <option>{{ pizza.name }}</option>
+                    {% endfor %}
+                </select>
+                <div class="invalid-feedback">
+                    Vinsamlegast veldu eina pizzu í tilboðið.
+                </div>
+                <label for="pizza2" class="form-label">Pizza 2</label>
+                <select class="form-select" id="pizza2" required>
+                    <option value="">Velja...</option>
+                    {% for pizza in pizzas %}
+                        <option>{{ pizza.name }}</option>
+                    {% endfor %}
+                </select>
+                <div class="invalid-feedback">
+                    Vinsamlegast veldu eina pizzu í tilboðið.
+                </div>
+            </div>
+            <button class="addToCartBtn" type="submit" value="Submit">Bæta í körfu</button>
+        </div>
+    </div>
+
+{% endblock %}
