@@ -14,7 +14,7 @@ h2 {
 }
 
 
-.grid-container {
+.pizzas {
     display: inline-grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 10px;

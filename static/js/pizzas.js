@@ -32,10 +32,10 @@ const menuFilter = (filter) => {
     pizzaList.forEach((pizza) => {
         const tag = pizza.dataset['filterTag']
         console.log(tag)
-        if (tag === filter) {
-            pizza.style.display = 'Block';
+        if (tag.includes(filter)) {
+            pizza.style.display = 'block';
         } else {
-            pizza.style.display = 'None';
+            pizza.style.display = 'none';
         }
     })
 }
