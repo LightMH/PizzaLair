@@ -8,26 +8,38 @@
     width: 30%;
 }
 
+
 h2 {
     margin-top: 20px;
 }
 
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    gap: 20px;
+    row-gap: 90px;
 }
 
-.card-container {
+.pizzaName {
+    font-weight: bold;
+}
+
+
+.grid-item {
     margin-top: 20px;
     width: 300px;
     height: 300px;
     margin-bottom: 30%;
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .img-container {
     width: 300px;
-    height: 300px;
+    height: 200px;
 }
 
 .menuOrderBy {
