@@ -25,8 +25,9 @@
         <button class="btn btn-outline-success" type="submit">Leita</button>
       </form>
         <a class="nav-item">
-          <a class="cart" href="{% url 'cart-index' %}"><span>0</span><img class="cart_nav" src={% static "images/cart_icon.png" %}></a>
-    
+            <form action="populateCart">
+                <a class="cart" href="{% url 'cart-index' %}"><span>0</span><img class="cart_nav" src={% static "images/cart_icon.png" %}></a>
+            </form>
         <a class="nav-item">
           <a class="cart" href="{% url 'user-index' %}"><img class="profile_nav" src={% static "images/profile_icon.png" %}> </a>
         </a>
