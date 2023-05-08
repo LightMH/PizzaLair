@@ -12,6 +12,10 @@
     margin-bottom: 20px;
 }
 
+.pizzaID {
+    display: none;
+}
+
 
 .pizzaInfo {
     font-family: "Book Antiqua";
