@@ -5,6 +5,12 @@
         <div class="menuHeader">
             <h2>Matseðill</h2>
         </div>
+        <div class="menuText">
+            <h4>Allar pizzur á matseðli eru og hálfmánar (Calzone) eru 12'' og botnarnir eru súrdeigsbotnar sem er bakað
+                á staðnum.
+                Síðan eru
+                bökurnar eldbakaðar í ofni við 500°C hita. Eldey notar einnig fersk og safarík álegg.</h4>
+        </div>
         <div class="filters">
             <div class="menuFilter">
                 <h5 id="filterLabel">Sía matseðil eftir:</h5>
@@ -42,7 +48,6 @@
                         <div class="flex-container">
                             <div class="card-container">
                                 <a href='{% url 'id-index' pizza.pizza.id %}'>
-
                                     <img class='img-container' src='{{ pizza.pizza.image }}' alt='Menu_image'>
                                 </a>
                                 <div class="card shadow-sm">
