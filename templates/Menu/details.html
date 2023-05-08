@@ -5,16 +5,15 @@
     <div class="descriptionContainer">
         <div class="pizzaInfo">
             <p id="pizza.name" class="pizzaName">{{ pizza.name }}</p>
-            <p class = "pizzaID" id="pizza.id"> {{ pizza.id }}</p>
             <p class="pizzaType">{{ pizza.type }}</p>
             <p class="pizzaDescription" id="pizza.description">{{ pizza.description }}</p>
             <p class="pizzaPrice" id="pizza.price">{{ pizza.price }} kr</p>
         </div>
-        <button class="add-cart addToCartBtn" id="{{pizza}}" type="submit" value="Submit">Bæta í körfu</button>
+        <button class="add-cart addToCartBtn" id="{{ pizza }}" type="submit" value="Submit">Bæta í körfu</button>
     </div>
     <div class="pizzaImgDiv">
         <img src="{{ pizza.image }}" alt="Pizza Image" class="pizzaImg">
         <a href="{{ pizza.id }}"></a>
     </div>
-    <script  src="/static/js/checkout.js"></script> 
+    <script src="/static/js/checkout.js"></script>
 {% endblock %}
