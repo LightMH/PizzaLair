@@ -29,8 +29,9 @@
                     <button class="btn btn-outline-success" type="submit" id="searchBtn">Leita</button>
                 </form>
                 <a class="nav-item">
-                    <a class="nav-link" href="{% url 'cart-index' %}"><img class="cart_nav"
-                                                                           src={% static "images/cart_icon.png" %}></a>
+                    <form action="populateCart">
+                        <a class="cart" href="{% url 'cart-index' %}"><span>0</span><img class="cart_nav" src={% static "images/cart_icon.png" %}></a>
+                    </form>
                 </a>
 
                 {% if user.is_authenticated %}
@@ -49,4 +50,9 @@
             </div>
         </div>
     </nav>
+    
+    </div>
+  </div>
+</nav>
+<script  src="/static/js/navbar_cart.js"></script> 
 </head>
