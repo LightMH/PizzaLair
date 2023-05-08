@@ -1,8 +1,12 @@
 
- .navbar-brand {
-     color: crimson;
- }
+.navbar-brand {
+    color: crimson;
+}
 
- .nav-item {
-     width: 60px;
- }
+.nav-item {
+    width: 60px;
+}
+
+.hidden {
+    opacity: 0.1;
+}

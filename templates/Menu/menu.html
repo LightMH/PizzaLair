@@ -5,14 +5,26 @@
         <div class="menuHeader">
             <h2>Matseðill</h2>
         </div>
+        <div class="menuText">
+            <h4>Allar pizzur á matseðli eru og hálfmánar (Calzone) eru 12'' og botnarnir eru súrdeigsbotnar sem er bakað
+                á staðnum.
+                Síðan eru
+                bökurnar eldbakaðar í ofni við 500°C hita. Eldey notar einnig fersk og safarík álegg.</h4>
+        </div>
         <div class="filters">
             <div class="menuFilter">
                 <h5 id="filterLabel">Sía matseðil eftir:</h5>
-                <button class="btn btn-success rounded-pill px-3" type="button" id="vegan">Vegan</button>
-                <button class="btn btn-success rounded-pill px-3" type="button" id="vegetarian"
+                <button class="btn btn-success rounded-pill px-3" type="button" id="veganBtn"
+                        onclick="menuFilter('Vegan')">
+                    Vegan
+                </button>
+                <button class="btn btn-success rounded-pill px-3" type="button" id="vegetarianBtn"
+                        onclick="menuFilter('Grænmetis')"
                         style="background-color: mediumseagreen">Grænmetis
                 </button>
-                <button class="btn btn-danger rounded-pill px-3" type="button" id="spicy" style="background-color: red">
+                <button class="btn btn-danger rounded-pill px-3" type="button" id="spicyBtn"
+                        onclick="menuFilter('Sterk')"
+                        style="background-color: red">
                     Sterk
                 </button>
             </div>
@@ -26,30 +38,37 @@
                 </button>
             </div>
         </div>
-        {% for pizza in pizza_list %}
 
-            <div class="flex-container">
-            <div class="card-container">
-                <a href='{% url 'id-index' pizza.pizza.id %}'>
-
-                    <img class='img-container' src='{{ pizza.pizza.image }}' alt='Menu_image'>
-                </a>
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h4 class="card-text">{{ pizza.pizza.name }}</h4>
-                        {% for topping_name in pizza.toppings %}
-                            <li>{{ topping_name }}</li>
-                        {% endfor %}
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" id="orderBtn" class="btn btn-sm btn-outline-secondary">Panta
-                                </button>
+        <div class="grid-container">
+            <div class="pizzas">
+                {% for pizza in pizza_list %}
+                    <div class="grid-item">
+                        <div class="flex-container">
+                            <div class="card-container" data-filter-tag="{{ pizza.pizza.type }}">
+                                <a href='{% url 'id-index' pizza.pizza.id %}'>
+                                    <img class='img-container' src='{{ pizza.pizza.image }}' alt='Menu_image'>
+                                </a>
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h4 class="card-text"><b>{{ pizza.pizza.name }}</b></h4>
+                                        <p class="pizzaType">{{ pizza.pizza.type }}</p>
+                                        {% for topping_name in pizza.toppings %}
+                                            <li>{{ topping_name }}</li>
+                                        {% endfor %}
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" id="orderBtn"
+                                                        class="btn btn-sm btn-outline-secondary">Panta
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
-        {% endfor %}
         </div>
     </div>
 {% endblock %}
