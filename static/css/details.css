@@ -13,8 +13,7 @@
 }
 
 .pizzaID {
-    color: white;
-    font-size: 1px;
+    display: none;
 }
 
 .pizzaInfo {
