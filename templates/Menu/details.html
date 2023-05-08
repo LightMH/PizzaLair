@@ -37,11 +37,11 @@
 <div class="descriptionHeader">Nánari lýsing</div>
     <div class="descriptionContainer">
         <div class="pizzaInfo"><p class="pizzaName">{{ pizza.name }}</p>
-        <p class="pizzaDescription">{{ pizza.description }}</p>
-        <p class="pizzaPrice">kr{{ pizza.price }}</p>
+            <p class="pizzaType">{{ pizza.type }}</p>
+            <p class="pizzaDescription">{{ pizza.description }}</p>
+            <p class="pizzaPrice">{{ pizza.price }} kr</p>
         </div>
-        <a href="{% url 'menu-index' %}">
-    <button class="addtocart" type="submit" value="Submit">Bæta í körfu</button></a>
+        <button class="addToCartBtn" type="submit" value="Submit">Bæta í körfu</button>
     </div>
     <div class="pizzaImgDiv">
         <img src="{{ pizza.image }}" alt="Pizza Image" class="pizzaImg">
