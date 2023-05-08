@@ -2,7 +2,19 @@ main {
     margin-left: 150px;
 }
 
-#continueBtn {
+.confirmation-button {
+    align-self: center;
     background-color: crimson;
     border-color: crimson;
+    text-decoration: none;
+    width: 300px;
+    height: fit-content;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.pay {
+    color: white;
+    font-size: x-large;
+    font-family: "Book Antiqua";
 }
