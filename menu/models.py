@@ -4,7 +4,7 @@ from offer.models import Offers
 
 
 # Create your models here.
-
+# new models
 
 class Toppings(models.Model):
     name = models.CharField(max_length=255, blank=True)
