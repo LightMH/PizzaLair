@@ -19,7 +19,8 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
     padding: 10px;
     gap: 20px;
-    row-gap: 90px;
+    row-gap: 600px;
+    margin-bottom: 100px;
 }
 
 .pizzaName {
@@ -30,16 +31,15 @@ h2 {
 .grid-item {
     margin-top: 20px;
     width: 300px;
-    height: 300px;
-    margin-bottom: 30%;
+    height: fit-content;
+    margin-bottom: 100%;
     margin-right: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 .img-container {
     width: 300px;
     height: 200px;
+    margin-top: 200px;
 }
 
 .menuOrderBy {
@@ -47,7 +47,8 @@ h2 {
 }
 
 .menuSite {
-    margin-left: 25px;
+    margin-left: 50px;
+    margin-bottom: 50px;
 }
 
 .filters {
@@ -60,6 +61,3 @@ h2 {
     margin-top: 20px;
 }
 
-.toppingsList {
-    display: inline-block;
-}

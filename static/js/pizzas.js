@@ -41,7 +41,34 @@ const menuFilter = (filter) => {
 }
 
 
+const orderMenuByName = (filter) => {
+    //const pizzaList = document.querySelectorAll('.menuOrderBy')
+    const pizzas = document.getElementById("pizzas_id").children
+
+    let pizza_dict = {}
+    for (let i = 0; i < pizzas.length; i++) {
+        let name = pizzas[i].children[0].children[0].children[1].children[0].children[0].children[0].innerHTML
+        pizza_dict[name] = pizzas[i]
+    }
+
+    let items = Object.keys(pizza_dict).map(
+        (key) => {
+            return [key, pizza_dict[key]]
+        }
+    )
+
+    items.sort()
+
+    // clearing the innerHTML to repopulate the menu so that is it sorted by name
+    const elements = document.getElementById('pizzas_id')
+    elements.innerHTML = ""
+
+    for (const value of items.values()) {
+        elements.appendChild(value[1])
+    }
+}
+
 const orderBy = (filter) => {
     const pizzaList = document.querySelectorAll('.card-container')
-    
+
 }
