@@ -42,7 +42,6 @@ const menuFilter = (filter) => {
 
 
 const orderMenuByName = (filter) => {
-    //const pizzaList = document.querySelectorAll('.menuOrderBy')
     const pizzas = document.getElementById("pizzas_id").children
 
     let pizza_dict = {}
@@ -55,7 +54,7 @@ const orderMenuByName = (filter) => {
         (key) => {
             return [key, pizza_dict[key]]
         }
-    )
+    );
 
     items.sort()
 
@@ -68,7 +67,30 @@ const orderMenuByName = (filter) => {
     }
 }
 
-const orderBy = (filter) => {
-    const pizzaList = document.querySelectorAll('.card-container')
+const orderMenuByPrice = (filter) => {
+    const pizzas = document.getElementById("pizzas_id").children
 
-}
+    let pizza_price_dict = {}
+    for (let i = 0; i < pizzas.length; i++) {
+        let price = pizzas[i].children[0].children[0].children[1].children[0].children[2].innerHTML
+        pizza_price_dict[price] = pizzas[i]
+    }
+
+    let items = Object.keys(pizza_price_dict).map(
+        (key) => {
+            return [key, pizza_price_dict[key]]
+        }
+    );
+
+    items.sort()
+
+    // clearing the innerHTML to repopulate the menu so that is it sorted by name
+    const elements = document.getElementById('pizzas_id')
+    elements.innerHTML = ""
+
+    for (const value of items.values()) {
+        elements.appendChild(value[1])
+    }
+};
+
+

@@ -29,7 +29,7 @@
                         style="background-color: crimson">Nafn
                 </button>
                 <button class="btn btn-danger rounded-pill px-3" type="button" id="price"
-                        onclick="orderMenuByPrice('Verð')"
+                        onclick="orderMenuByPrice()"
                         style="background-color: crimson">Verð
                 </button>
             </div>
@@ -49,7 +49,7 @@
                                     <div class="card-body">
                                         <h4 class="card-text"><b>{{ pizza.pizza.name }}</b></h4>
                                         <p class="pizzaType">{{ pizza.pizza.type }}</p>
-                                        <p class="pizzaType">{{ pizza.pizza.price }} kr</p>
+                                        <p class="pizzaPrice">{{ pizza.pizza.price }} kr</p>
                                         {% for topping_name in pizza.toppings %}
                                             <li>{{ topping_name }}</li>
                                         {% endfor %}
