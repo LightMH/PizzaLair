@@ -40,3 +40,62 @@ const menuFilter = (filter) => {
     })
 }
 
+
+const orderMenuByName = (filter) => {
+    const pizzas = document.getElementById("pizzas_id").children
+
+    let pizza_dict = {}
+    for (let i = 0; i < pizzas.length; i++) {
+        let name = pizzas[i].children[0].children[0].children[1].children[0].children[0].children[0].innerHTML
+        pizza_dict[name] = pizzas[i]
+    }
+
+    let items = Object.keys(pizza_dict).map(
+        (key) => {
+            return [key, pizza_dict[key]]
+        }
+    );
+
+    items.sort()
+
+    // clearing the innerHTML to repopulate the menu so that is it sorted by name
+    const elements = document.getElementById('pizzas_id')
+    elements.innerHTML = ""
+
+    for (const value of items.values()) {
+        elements.appendChild(value[1])
+    }
+}
+
+const orderMenuByPrice = (filter) => {
+    const pizzas = document.getElementById("pizzas_id").children
+
+    let elements = [];
+    for (let i = 0; i < pizzas.length; i++) {
+        let price = pizzas[i].children[0].children[0].children[1].children[0].children[2].innerHTML
+        price = Number(price.split(" ")[0])
+        elements.push([price, pizzas[i]])
+    }
+    ;
+
+    elements.sort((first, second) => {
+        if (first[0] < second[0]) {
+            return -1;
+        }
+        if (first[0] > second[0]) {
+            return 1;
+        }
+        return 0;
+    });
+
+    // clearing the innerHTML to repopulate the menu so that is it sorted by name
+    const container = document.getElementById('pizzas_id')
+    container.innerHTML = ""
+
+    for (const value of elements.values()) {
+        container.appendChild(value[1])
+    }
+
+};
+
+

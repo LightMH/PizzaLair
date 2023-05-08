@@ -28,23 +28,25 @@
                     Sterk
                 </button>
             </div>
-            <div class="menuOrderBy">
+            <div class="menuOrderBy" data-orderBy-tag="{{ pizza.pizza.name }}">
                 <h5>Raða matseðli eftir:</h5>
                 <button class="btn btn-success rounded-pill px-3" type="button" id="pizzaName"
+                        onclick="orderMenuByName()"
                         style="background-color: crimson">Nafn
                 </button>
                 <button class="btn btn-danger rounded-pill px-3" type="button" id="price"
+                        onclick="orderMenuByPrice()"
                         style="background-color: crimson">Verð
                 </button>
             </div>
         </div>
 
         <div class="grid-container">
-            <div class="pizzas">
+            <div id="pizzas_id" class="pizzas">
                 {% for pizza in pizza_list %}
                     <div class="grid-item">
                         <div class="flex-container">
-                            <div class="card-container" data-filter-tag="{{ pizza.pizza.type }}">
+                            <div class="card-container">
                                 <a href='{% url 'id-index' pizza.pizza.id %}'>
                                     <img class='img-container' src='{{ pizza.pizza.image }}' alt='Menu_image'>
                                 </a>
@@ -52,6 +54,7 @@
                                     <div class="card-body">
                                         <h4 class="card-text"><b>{{ pizza.pizza.name }}</b></h4>
                                         <p class="pizzaType">{{ pizza.pizza.type }}</p>
+                                        <p class="pizzaPrice">{{ pizza.pizza.price }} kr</p>
                                         {% for topping_name in pizza.toppings %}
                                             <li>{{ topping_name }}</li>
                                         {% endfor %}
