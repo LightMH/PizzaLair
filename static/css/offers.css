@@ -20,8 +20,9 @@
 }
 
 #singleOfferImg {
-    width: 200px;
+    width: 250px;
     height: 200px;
+    border-radius: 5px;
 }
 
 .form-select {
