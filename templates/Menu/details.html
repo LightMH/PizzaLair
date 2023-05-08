@@ -3,39 +3,6 @@
     <link rel="stylesheet" href="/static/css/details.css">
     <div class="descriptionHeader">Nánari lýsing</div>
     <div class="descriptionContainer">
-        <div class="pizzaInfo">
-            <p class="pizzaName" id="pizza.name">
-                {{ pizza.name }}
-                <a ></a>
-            </p>
-            <p class = "pizzaName" id="pizza.id">
-                {{ pizza.id }}
-            </p>
-            <p class="pizzaDescription" id="pizza.description">
-                {{ pizza.description }}
-            </p>
-            <p class="pizzaPrice" id="pizza.price">
-                {{ pizza.price }} kr
-            </p>
-        </div>
-        <a  class="add-cart addToCartBtn " id="{{pizza}}" href='#'>
-            Bæta í körfu
-        </a>
-
-    </div>
-    
-    <div class="pizzaImgDiv">
-        <img src="{{pizza.image}}" alt="" class="pizzaImg">
-    </div>
-    <script  src="/static/js/checkout.js"></script> 
-{% endblock %}
-
-
-
-<!-- href="{% url 'menu-index' %}" -->
-<!-- 
-<div class="descriptionHeader">Nánari lýsing</div>
-    <div class="descriptionContainer">
         <div class="pizzaInfo"><p class="pizzaName">{{ pizza.name }}</p>
             <p class="pizzaType">{{ pizza.type }}</p>
             <p class="pizzaDescription">{{ pizza.description }}</p>
@@ -47,4 +14,5 @@
         <img src="{{ pizza.image }}" alt="Pizza Image" class="pizzaImg">
         <a href="{{ pizza.id }}"></a>
     </div>
-    <script  src="/static/js/checkout.js"></script>  -->
+
+{% endblock %}
