@@ -22,17 +22,35 @@
                     </li>
                 </ul>
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Leita..." aria-label="Leita">
-        <button class="btn btn-outline-success" type="submit">Leita</button>
-      </form>
-        <a class="nav-item">
-            <form action="populateCart">
-                <a class="cart" href="{% url 'cart-index' %}"><span>0</span><img class="cart_nav" src={% static "images/cart_icon.png" %}></a>
-            </form>
-        <a class="nav-item">
-          <a class="cart" href="{% url 'user-index' %}"><img class="profile_nav" src={% static "images/profile_icon.png" %}> </a>
-        </a>
+                <form class="d-flex" role="search">
+
+                    <input class="form-control me-2" type="search" id="search_box" placeholder="Leita..."
+                           aria-label="Leita">
+                    <button class="btn btn-outline-success" type="submit" id="searchBtn">Leita</button>
+                </form>
+                <a class="nav-item">
+                    <form action="populateCart">
+                        <a class="cart" href="{% url 'cart-index' %}"><span>0</span><img class="cart_nav" src={% static "images/cart_icon.png" %}></a>
+                    </form>
+                </a>
+
+                {% if user.is_authenticated %}
+                    <a class="nav-item">
+                        <a class="nav-link" href="{% url 'user-profile' %}"><img class="profile_nav"
+                                                                                 src={{ user.customeraccount.profile_image }}>{{ user.customeraccount.username }}
+                        </a>
+                    </a>
+                {% else %}
+                    <a class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}"><img class="profile_nav"
+                                                                          src={% static "images/profile_icon.png" %}></a>
+                    </a>
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>
+    
     </div>
   </div>
 </nav>
