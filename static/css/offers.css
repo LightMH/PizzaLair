@@ -12,7 +12,7 @@
     display: grid;
     grid-template-columns: repeat(3, 300px);
     grid-gap: 30px;
-    margin: auto;
+    margin-left: 10%;
 }
 
 .img-container {
