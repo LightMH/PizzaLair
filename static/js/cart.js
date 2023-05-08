@@ -88,16 +88,6 @@ function onLoadC() {
 
 
 
-function onLoadCartData(products){
-    let product = localStorage.getItem('productsInCart');
-    const h1 = document.createElement("h1");
-    const underline = document.createElement('u');
-    underline.innerText = product;
-    h1.append(underline);
-    document.body.append(h1);
-    console.log(product)
-    
-}
 
 function empty() {
     //empty cart, refresh siðu 
@@ -105,8 +95,8 @@ function empty() {
     if(localStorage.getItem('productsInCart'),localStorage.getItem('cartNumbers')){
         localStorage.removeItem('productsInCart');
         localStorage.removeItem('cartNumbers');
-        // onLoadCartNumbers();
-        // window.location.reload();
+        
+        location.reload()
       
       }
     
@@ -116,23 +106,42 @@ function empty() {
 function removePizza(button) {
     console.log("remove 1 pizza");
     console.log(button.id);
-    let numbers = localStorage.getItem('cartNumbers');
-    numbers = JSON.parse(numbers); 
-    if(numbers[product.ID] == undefined){
-        numbers = {
-            ...numbers, // ... er JS magic for loop
-            [product.ID]: product,
-        }}
-    console.log(number)
-    // const items = JSON.parse(localStorage.getItem('productsInCart'));
-    // localStorage.removeItem('productsInCart',button.id);
+    let cartItems = localStorage.getItem('productsInCart'); // sækja Id ..
+    let cartNum = localStorage.getItem('cartNumbers'); // sækja Id ..
+    cartNum = JSON.parse(cartNum);
+    cartItems = JSON.parse(cartItems);
     
+    console.log(cartItems)
+    console.log(cartItems[button.id].inCart)
+    console.log
+    if(cartItems[button.id].inCart == 1) {
+        delete cartItems[button.id]
+    } else {
+        cartItems[button.id].inCart -= 1    
+    }
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+    localStorage.setItem('cartNumbers', cartNum - 1);
+    location.reload()
 }
 function addPizza(button) {
     console.log("add 1 pizza")
     console.log(button.id)
+    let cartItems = localStorage.getItem('productsInCart'); // sækja Id ..
+    let cartNum = localStorage.getItem('cartNumbers'); // sækja Id ..
+    cartNum = JSON.parse(cartNum);
+    cartItems = JSON.parse(cartItems);
+
+    cartItems[button.id].inCart += 1 
+
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+    localStorage.setItem('cartNumbers', cartNum + 1);
+    location.reload()
+
+
+
+
 }
 
-onLoadCartData()
+
 onLoadC()
 onLoadCartNumbers()
