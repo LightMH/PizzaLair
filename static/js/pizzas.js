@@ -79,7 +79,6 @@ const orderMenuByPrice = (filter) => {
         price = Number(price.split(" ")[0])
         elements.push([price, pizzas[i]])
     }
-    ;
 
     elements.sort((first, second) => {
         if (first[0] < second[0]) {
@@ -100,5 +99,6 @@ const orderMenuByPrice = (filter) => {
     }
 
 };
+
 
 

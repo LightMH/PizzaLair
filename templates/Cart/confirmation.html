@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/static/css/confirmation.css">
+{% extends 'base.html' %}
+{% block content %}
+    <div class="confirmationContainer">
+        <h4 class="confirmationHeader">Er allt rétt?</h4>
+    </div>
+    <div class="container">
+        <div class="cart-container divContainer">
+            <h2 class="cartHeader">Mín pöntun</h2>
+
+            <table>
+                <thead>
+                <tr>
+                    <th><strong>Pizza</strong></th>
+                    <th><strong>Verð</strong></th>
+                    <th><strong>Magn</strong></th>
+                </tr>
+                </thead>
+                <tbody class="test" id="table">
+                </tbody>
+            </table>
+            <hr>
+            <table id="carttotals">
+                <tr>
+                    <td><strong>Vörur</strong></td>
+                    <td><strong>Heildarverð</strong></td>
+                </tr>
+                <tr>
+                    <td class="magn">x <span id="itemsquantity">0</span></td>
+
+                    <td class="totalprice"><span id="total">0</span> kr</td>
+                </tr>
+            </table>
+
+            <a href="{% url 'checkout-index' %}">
+                <button class="changeOrderBtn">Breyta pöntun</button>
+            </a>
+            <div class="cart-buttons">
+                <a href="{% url 'checkout-index' %}">
+                    <button id="checkout" class="confirmBtn">Staðfesta pöntun</button>
+                </a>
+                <!-- <button id="checkout">Checkout</button> -->
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/confirmation.js"></script>
+{% endblock %}
