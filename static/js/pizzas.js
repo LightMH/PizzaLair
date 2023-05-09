@@ -28,17 +28,20 @@ $(document).ready(function () {
 
 
 const menuFilter = (filter) => {
-    const pizzaList = document.querySelectorAll('.card-container')
-    pizzaList.forEach((pizza) => {
-        const tag = pizza.dataset['filterTag']
-        console.log(tag)
+    // const pizzaList = document.querySelectorAll('.card-container')
+    const pizzaList = document.getElementById('pizzas_id').children;
+
+    for (let i = 0; i < pizzaList.length; i++) {
+        const pizza = pizzaList[i]
+        const tag = pizza.children[0].children[0].dataset['filterTag']
         if (tag.includes(filter)) {
             pizza.style.display = 'block';
         } else {
             pizza.style.display = 'none';
         }
-    })
-}
+
+    }
+};
 
 
 const orderMenuByName = (filter) => {
@@ -76,7 +79,6 @@ const orderMenuByPrice = (filter) => {
         price = Number(price.split(" ")[0])
         elements.push([price, pizzas[i]])
     }
-    ;
 
     elements.sort((first, second) => {
         if (first[0] < second[0]) {
@@ -97,5 +99,6 @@ const orderMenuByPrice = (filter) => {
     }
 
 };
+
 
 
