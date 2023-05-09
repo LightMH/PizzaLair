@@ -1,22 +1,19 @@
 .menuHeader {
-    border-radius: 10px;
-    background-color: crimson;
-    color: white;
+    color: darkred;
+    font-size: xx-large;
+    margin: 10px;
     text-align: center;
-    font-family: var(--primary-font);
-    margin: auto;
-    width: 30%;
 }
-
 
 h2 {
     margin-top: 20px;
 }
 
-
 .menuText {
     text-align: center;
     font-family: var(--primary-font);
+    font-weight: lighter;
+    font-size: large;
 }
 
 .pizzas {
@@ -28,14 +25,20 @@ h2 {
 }
 
 .card-container {
-    border: medium solid crimson;
-    border-radius: 2px;
+    border: thin solid #828282;
+    border-radius: 5px;
+    height: 480px;
+}
+
+.card-body {
+    background-color: #e5c7c2;
+    color: #474747;
+    height: 255px;
 }
 
 .pizzaName {
     font-weight: bold;
 }
-
 
 .grid-item {
     margin-top: 20px;
@@ -53,6 +56,7 @@ h2 {
 
 .menuOrderBy {
     margin-top: 20px;
+    color: darkred;
 }
 
 .menuSite {
@@ -68,8 +72,58 @@ h2 {
 .menuFilter {
     margin-right: 70px;
     margin-top: 20px;
+    color: darkred;
 }
 
 .grid-container {
     margin-left: 8%;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.veganPizza {
+    background: #8cb369;
+    border-radius: 20px;
+    width: 70px;
+    height: 35px;
+    text-align: center;
+    color: white;
+    font-family: var(--primary-font);
+    padding-top: 5px;
+}
+
+.vegPizza {
+    background: #526f38;
+    border-radius: 20px;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    color: white;
+    font-family: var(--primary-font);
+    padding-top: 5px;
+}
+
+.spicyPizza {
+    background: #FF7F11;
+    border-radius: 20px;
+    width: 70px;
+    height: 35px;
+    text-align: center;
+    color: white;
+    font-family: var(--primary-font);
+    padding-top: 5px;
+}
+
+.pricing {
+    font-weight: bold;
+    text-decoration: none;
+    color: #474747;
+}
+
+.topping {
+    font-weight: bold;
+    padding-top: 10px;
+    margin-bottom: 1px;
 }

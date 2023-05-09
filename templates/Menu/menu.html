@@ -6,25 +6,27 @@
             <h2>Matseðill</h2>
         </div>
         <div class="menuText">
-            <h4>Allar pizzur á matseðli eru og hálfmánar (Calzone) eru 12'' og botnarnir eru súrdeigsbotnar sem er bakað
-                á staðnum.
-                Síðan eru
-                bökurnar eldbakaðar í ofni við 500°C hita. Eldey notar einnig fersk og safarík álegg.</h4>
+            Allar pizzur og hálfmánar á matseðli eru 12'' pizzur. Botnarnir eru súrdeigsbotnar sem er búnir eru til
+            á staðnum. Pizzurnar eru svo eldbakaðar í ofni við 500°C hita.
+        </div>
+        <div class="menuText">
+            Eldey notar einungis fersk og safarík álegg.
         </div>
         <div class="filters">
             <div class="menuFilter">
                 <h5 id="filterLabel">Sía matseðil eftir:</h5>
                 <button class="btn btn-success rounded-pill px-3" type="button" id="veganBtn"
-                        onclick="menuFilter('Vegan')">
+                        onclick="menuFilter('Vegan')"
+                        style="background-color: #8cb369; border-color: #8cb369">
                     Vegan
                 </button>
                 <button class="btn btn-success rounded-pill px-3" type="button" id="vegetarianBtn"
                         onclick="menuFilter('Grænmetis')"
-                        style="background-color: mediumseagreen">Grænmetis
+                        style="background-color: #526f38; border-color: #526f38">Grænmetis
                 </button>
                 <button class="btn btn-danger rounded-pill px-3" type="button" id="spicyBtn"
                         onclick="menuFilter('Sterk')"
-                        style="background-color: red">
+                        style="background-color: #FF7F11; border-color: #FF7F11">
                     Sterk
                 </button>
             </div>
@@ -32,11 +34,11 @@
                 <h5>Raða matseðli eftir:</h5>
                 <button class="btn btn-success rounded-pill px-3" type="button" id="pizzaName"
                         onclick="orderMenuByName()"
-                        style="background-color: crimson">Nafn
+                        style="background-color: darkred; border-color: darkred">Nafn
                 </button>
                 <button class="btn btn-danger rounded-pill px-3" type="button" id="price"
                         onclick="orderMenuByPrice()"
-                        style="background-color: crimson">Verð
+                        style="background-color: darkred; border-color: darkred">Verð
                 </button>
             </div>
         </div>
@@ -53,11 +55,23 @@
                                 <div class="card shadow-sm" style="border-radius: 0px">
                                     <div class="card-body">
                                         <h4 class="card-text"><b>{{ pizza.pizza.name }}</b></h4>
-                                        <p class="pizzaType">{{ pizza.pizza.type }}</p>
-                                        <p class="pizzaPrice">{{ pizza.pizza.price }} kr</p>
-                                        {% for topping_name in pizza.toppings %}
-                                            <li>{{ topping_name }}</li>
-                                        {% endfor %}
+                                        {% if pizza.pizza.type == "Grænmetis" or pizza.pizza.type == "Grænmetis, Calzone" %}
+                                            <p class="vegPizza">Grænmetis</p>
+                                        {% elif pizza.pizza.type == "Sterk" or pizza.pizza.type == "Sterk, Calzone" %}
+                                            <p class="spicyPizza">Sterk</p>
+                                        {% elif pizza.pizza.type == "Vegan" %}
+                                            <p class="veganPizza"> {{ pizza.pizza.type }}</p>
+                                        {% else %}
+                                            <p></p>
+                                        {% endif %}
+                                        <a class="pricing"> Verð:</a> {{ pizza.pizza.price }} kr.
+                                        <p class="topping">Álegg:</p>{% for topping_name in pizza.toppings %}
+                                        {% if forloop.last %}
+                                            {{ topping_name }}.
+                                        {% else %}
+                                            {{ topping_name }},
+                                        {% endif %}
+                                    {% endfor %}
                                         <div class="d-flex justify-content-between align-items-center">
                                         </div>
                                     </div>

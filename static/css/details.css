@@ -1,15 +1,8 @@
 .descriptionHeader {
-    border-style: solid;
-    border-radius: 10px;
-    background-color: crimson;
-    color: white;
-    width: 250px;
-    height: fit-content;
-    text-align: center;
-    font-family: var(--primary-font);
+    color: darkred;
     font-size: xx-large;
-    margin-left: 45%;
-    margin-bottom: 20px;
+    margin: 10px;
+    text-align: center;
 }
 
 .pizzaID {
@@ -22,6 +15,7 @@
     font-family: var(--primary-font);
     font-size: x-large;
     float: right;
+    font-weight: lighter;
     width: 300px;
 }
 
@@ -35,19 +29,18 @@
 }
 
 .descriptionContainer {
-    width: 350px;
+    width: 400px;
     height: fit-content;
     float: right;
     text-align: left;
-    margin-right: 100px;
-    border-style: solid;
+    margin-right: 200px;
     border-radius: 20px;
-    border-color: darkred;
+    border: thin solid white;
 }
 
 
 .pizzaImgDiv {
-    margin-left: 100px;
+    margin-left: 200px;
     width: 400px;
     height: 400px;
 }
@@ -58,18 +51,49 @@
     border-radius: 10px;
 }
 
-.add-cart addToCartBtn {
-    border-style: solid;
-    border-radius: 20px;
+.add-cart {
+    background-color: darkred;
     border-color: darkred;
+    border-radius: 20px;
+    color: white;
     width: 120px;
-    height: 60px;
+    height: 40px;
     float: right;
     margin-right: 10px;
     margin-bottom: 10px;
-    font-weight: bolder;
+    font-family: var(--primary-font);
 }
 
 .addToCartBtn:hover {
     background-color: lightgray;
+}
+
+.veganPizza {
+    background: #8cb369;
+    border-radius: 20px;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-family: var(--primary-font);
+}
+
+.vegPizza {
+    background: #526f38;
+    border-radius: 20px;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    color: white;
+    font-family: var(--primary-font);
+}
+
+.spicyPizza {
+    background: #FF7F11;
+    border-radius: 20px;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-family: var(--primary-font);
 }

@@ -30,7 +30,8 @@
                 </form>
                 <a class="nav-item">
                     <form action="populateCart">
-                        <a class="cart" href="{% url 'cart-index' %}"><span class="orderCounter">0</span><img class="cart_nav" src={% static "images/cart_nytt.gif" %}></a>
+                        <a class="cart" href="{% url 'cart-index' %}"><span class="orderCounter">0</span><img
+                                class="cart_nav" src={% static "images/cart_nytt.gif" %}></a>
                     </form>
                 </a>
 
@@ -43,7 +44,7 @@
                 {% else %}
                     <a class="nav-item">
                         <a class="nav-link" href="{% url 'login' %}"><img class="profile_nav"
-                                                                          src={% static "images/profile_icon.png" %}></a>
+                                                                          src={% static "images/profile_icon.png" %}>Innskráning</a>
                     </a>
                 {% endif %}
 
