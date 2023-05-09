@@ -5,6 +5,14 @@
     text-align: center;
 }
 
+.search {
+    display: flex;
+    justify-self: center;
+    height: 5%;
+    width: 40%;
+}
+
+
 h2 {
     margin-top: 20px;
 }
@@ -14,6 +22,8 @@ h2 {
     font-family: var(--primary-font);
     font-weight: lighter;
     font-size: large;
+
+
 }
 
 .pizzas {
@@ -79,6 +89,7 @@ h2 {
     margin-left: 8%;
 }
 
+
 .card-text {
     text-align: center;
 }
@@ -127,3 +138,4 @@ h2 {
     padding-top: 10px;
     margin-bottom: 1px;
 }
+
