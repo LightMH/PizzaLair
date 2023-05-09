@@ -1,38 +1,37 @@
-// console.log("Offer JS is Running")
+console.log("Offer JS is Running")
+value = document.getElementById('price')
 
-// // let pizzaOpt = document.getElementById("pizzanumber");
-// // let selectedText = pizzaOpt.options[pizzaOpt.selectedIndex].text;
-// // console.log(pizzaOpt)
-// // console.log(selectedText)
-// let price = document.getElementById("price");
-// price.addEventListener('click', check)
 // let products = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
 //     {
+//         ID: valp,
+//         Offer: offer,
 //         Name: valname,
-//         Price: valprice
+//         Price: valprice,
+//         inCart: 0
 //     }
 // ];
 
+let offer_list = []
 
 
-// let offerList = []
+function check(val) {
+    console.log(val)
+    str1 = val.replace ( /[^\d.]/g, '' );
+    if(val != NaN) {
+        console.log("is Okey")
+    }
+        
 
-// let test = document.getElementById('pizza_price')
+    offer_list.push(val)
+    total = parseInt(str1, 10)
+    offer_list.push(total)
+    console.log(total)
+    console.log(offer_list)
+   
+    
+}
 
-// // function optionTest(option) {
-// //     console.log(option)
-
-// // }
-
-
-
-//     // document.querySelector('.output').textContent = output;
-// function getOption() {
-//     console.log()
+// function check2(off_list) {
+//     console.log(off_list)
+    
 // }
-
-
-
-
-// selectElement = document.querySelector('#select1');
-// output = selectElement.options[selectElement.selectedIndex].value;

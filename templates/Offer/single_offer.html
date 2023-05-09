@@ -19,10 +19,10 @@
             <div class="pizzasInOffer">
                 {% for number in offer.range_of_pizzas %}
                     <label for="pizza1" class="form-label">Pizza {{ number }}</label>
-                    <select class="form-select" id="price" onchange="getOption()" required>
-                        <option >Velja...</option>
+                    <select class="form-select" id="price" onchange="check(this.value)" required>
+                        <option></option>
                         {% for pizza in pizzas %}
-                            <option>{{ pizza.name }} <p id="price">{{ pizza.price }} kr</p></option>
+                            <option >{{ pizza.name }} <p id="price">{{ pizza.price }} kr</p></option>
                             
                         {% endfor %}
                     </select>
