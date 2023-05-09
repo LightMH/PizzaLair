@@ -18,12 +18,13 @@
             <img src="/static/images/Offer_img.png" alt="Offer Image" class="singleOfferImg" id="singleOfferImg">
             <div class="pizzasInOffer">
                 {% for number in offer.range_of_pizzas %}
-                    <label for="pizza1" class="form-label">Pizza {{ number }}</label>
-                    <select class="form-select" id="select" onchange="check(this.value)" required>
+                    <label for="pizza1" class="form-label" id="drop-">Pizza {{ number }}</label>
+                    <select class="form-select" id="select-{{ number }}"  required>
+                        <!-- <select class="form-select" id="select-{{ number }}" onchange="check(event, this.value)" required> -->
+
                         <option></option>
                         {% for pizza in pizzas %}
-                            <option id="pizza.name">{{ pizza.name }} <p id="price">{{ pizza.price }} kr</p></option>
-                            
+                            <option onclick="check(event, this.value)" value="{{ pizza.name }}">{{ pizza.name }} <p class="price">{{ pizza.price }} kr</p></option>
                         {% endfor %}
                     </select>
                 {% endfor %}
@@ -31,7 +32,7 @@
                     Vinsamlegast veldu pizzur í tilboðið.
                 </div>
             </div>
-            <button class="add-cart addToCartBtn" type="submit" value="Submit">Bæta í körfu</button>
+            <button class="add-cart addToCartBtn" id="{{ offer }}" type="submit" value="Submit" >Bæta í körfu</button>
         </div>
     </div>
 

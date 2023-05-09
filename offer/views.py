@@ -20,4 +20,4 @@ def single_index(request, id):
     return render(request, 'offer/single_offer.html', {
         'offer': get_object_or_404(Offers, pk=id),
         'pizzas': pizza_list
-    });
+    })
