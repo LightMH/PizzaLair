@@ -23,9 +23,11 @@ h2 {
     display: inline-grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 10px;
-    row-gap: 40px;
     margin-bottom: 100px;
+    margin-left: 8%;
+    column-gap: 20px;
 }
+
 
 .pizzaName {
     font-weight: bold;
@@ -36,12 +38,12 @@ h2 {
     margin-top: 20px;
     width: 300px;
     height: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     margin-right: 20px;
 }
 
 .img-container {
-    width: 300px;
+    width: 290px;
     height: 200px;
     margin-top: 20px;
 }
@@ -63,5 +65,11 @@ h2 {
 .menuFilter {
     margin-right: 70px;
     margin-top: 20px;
+}
+
+.card-container {
+    border: solid;
+    border-color: crimson;
+    border-radius: 2px;
 }
 

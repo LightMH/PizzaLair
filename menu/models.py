@@ -21,7 +21,7 @@ class Pizza(models.Model):
     image = models.CharField(max_length=9999, blank=True)
     order = models.ManyToManyField(Order, blank=True)
     offer = models.ManyToManyField(Offers, blank=True)
-    price = models.FloatField(blank=True)
+    price = models.IntegerField(max_length=10, blank=True)
 
     def __str__(self):
         return self.name
