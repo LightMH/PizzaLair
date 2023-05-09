@@ -6,17 +6,9 @@
         <div class="pizzaInfo">
             <p id="pizza.name" class="pizzaName">{{ pizza.name }}</p>
             <p class="pizzaID" id="pizza.id"> {{ pizza.id }}</p>
-            {% if pizza.type == "Grænmetis" %}
-                <p class="vegPizza"> {{ pizza.type }}</p>
-            {% elif pizza.type == "Sterk" %}
-                <p class="spicyPizza"> {{ pizza.type }}</p>
-            {% elif pizza.type == "Vegan" %}
-                <p class="veganPizza"> {{ pizza.type }}</p>
-            {% else %}
-                <p></p>
-            {% endif %}
+            <p class="pizzaType">{{ pizza.type }}</p>
             <p class="pizzaDescription" id="pizza.description">{{ pizza.description }}</p>
-            <p class="pizzaPrice" id="pizza.price">{{ pizza.price }} kr.</p>
+            <p class="pizzaPrice" id="pizza.price">{{ pizza.price }} kr</p>
         </div>
         <button class="add-cart addToCartBtn" id="{{ pizza }}" type="submit" value="Submit">Bæta í körfu</button>
     </div>
