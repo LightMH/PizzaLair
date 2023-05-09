@@ -76,8 +76,8 @@ function onLoadC() {
         }
     }
     
-    let values = document.getElementById('quant').innerHTML;
-    console.log(values)
+    // let values = document.getElementById('quant').innerHTML;
+    // console.log(values)
     
 
     

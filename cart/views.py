@@ -8,3 +8,6 @@ def cart_index(request):
 
 def checkout_index(request):
     return render(request, 'cart/checkout_process.html')
+
+def confirmation_index(request):
+    return render(request, 'cart/is_everything_right.html')

@@ -4,7 +4,7 @@ let carts = document.querySelectorAll('.add-cart'); // sja til
 
 var valp = document.getElementById('pizza.id').innerText ; // sækja pizza id
 
-var valname = document.getElementById('pizza.name').innerText ;
+var valname = document.getElementById('pizza.name').innerText;
 var valprice = document.getElementById('pizza.price').innerText ;
 
 valprice = valprice.slice(0,-2)

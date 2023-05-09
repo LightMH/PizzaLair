@@ -54,3 +54,8 @@
 .form-label {
     margin-top: 10px;
 }
+
+
+.pizza_price {
+    display: none;
+}
