@@ -7,7 +7,12 @@
     margin: auto;
     width: 30%;
 }
-
+.search {
+    display: flex;
+    justify-self: center;
+    height: 5%;
+    width: 40%;
+}
 
 h2 {
     margin-top: 20px;
@@ -17,6 +22,7 @@ h2 {
 .menuText {
     text-align: center;
     font-family: var(--primary-font);
+    margin-bottom: 20px;
 }
 
 .pizzas {
