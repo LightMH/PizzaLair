@@ -6,7 +6,7 @@
     width: 200px;
     height: fit-content;
     text-align: center;
-    font-family: "Book Antiqua";
+    font-family: var(--primary-font);
     font-size: xx-large;
     margin-left: 45%;
     margin-bottom: 20px;
@@ -17,7 +17,7 @@
 }
 
 .pizzaInfo {
-    font-family: "Book Antiqua";
+    font-family: var(--primary-font);
     font-size: x-large;
     float: right;
     width: 300px;
@@ -31,6 +31,7 @@
     font-weight: bold;
     font-size: xx-large;
 }
+
 .descriptionContainer {
     width: 350px;
     height: fit-content;
