@@ -1,7 +1,7 @@
 {% load static %}
 <link rel="stylesheet" href="css/main.css">
 <head>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 Eldey
@@ -31,7 +31,9 @@
                 <a class="nav-item">
                     <form action="populateCart">
                         <a class="cart" href="{% url 'cart-index' %}"><span>0</span><img class="cart_nav"
-                                                                                         src={% static "images/cart_icon.png" %}></a>
+
+                                                                                         src={% static "images/cart.png" %}></a>
+
                     </form>
                 </a>
 

@@ -1,5 +1,7 @@
 
-
+:root {
+    --primary-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 
 .cart_nav {
     display: flex;
@@ -25,9 +27,44 @@
 .navbar-brand:hover {
     border-bottom: 2px grey solid;
 }
+
 .nav_link:hover {
     border-bottom: 2px grey solid;
 }
+
 .nav_item:hover {
     border-bottom: 2px grey solid;
+}
+
+.navbar {
+    background: darkred;
+}
+
+.navbar-expand-lg {
+    background: darkred;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.profile_nav {
+    border-radius: 50%;
+    mix-blend-mode: normal;
+}
+
+.nav-link {
+    font-family: var(--primary-font);
+    color: white;
+}
+
+.cart_nav {
+    mix-blend-mode: normal;
+}
+
+.cart {
+    font-family: var(--primary-font);
+    color: white;
+    text-decoration: none;
+    position: relative;
 }
