@@ -19,12 +19,13 @@
             <div class="pizzasInOffer">
                 {% for number in offer.range_of_pizzas %}
                     <label for="pizza1" class="form-label" id="drop-">Pizza {{ number }}</label>
-                    <select class="form-select" id="select-{{ number }}"  required>
-                        <!-- <select class="form-select" id="select-{{ number }}" onchange="check(event, this.value)" required> -->
+                    <select class="form-select" id="select-{{ number }}" onchange="check(event,this.value)" required>
+                    <!-- <select class="form-select" id="select" required> -->
 
                         <option></option>
                         {% for pizza in pizzas %}
-                            <option onclick="check(event, this.value)" value="{{ pizza.name }}">{{ pizza.name }} <p class="price">{{ pizza.price }} kr</p></option>
+                            <option id="pizza.name">{{ pizza.name }} <p id="price">{{ pizza.price }} kr</p></option>
+                            
                         {% endfor %}
                     </select>
                 {% endfor %}
@@ -32,7 +33,7 @@
                     Vinsamlegast veldu pizzur í tilboðið.
                 </div>
             </div>
-            <button class="add-cart addToCartBtn" id="{{ offer }}" type="submit" value="Submit" >Bæta í körfu</button>
+            <button class="add-cart addToCartBtn" id="{{ offer }}" type="submit" value="Submit">Bæta í körfu</button>
         </div>
     </div>
 

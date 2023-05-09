@@ -4,7 +4,7 @@ console.log("Offer JS is Running")
 let setja = document.getElementById('add-cart')
 let setja_offer = document.querySelectorAll('.add-cart'); // sja til
 // let name__ = document.getElementById('offer.name').innerText;
-let price = document.getElementById('pizza.price').innerText;
+let price = document.getElementById('pizza.price');
 // let selecter = document.getElementById('select')
 let offer = document.getElementById('offer.name'); // sja til
 let offers = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
@@ -34,18 +34,17 @@ let pNum = document.getElementById('drop-').innerText;
 
 function check(event, val) {
     let list = []
-    console.log(event)
-    console.log(event.target.value)
-    console.log(val)
-    var index = document.getElementById("form-select");
-    let sel = document.getElementsByClassName('form-select');
-    console.log("sel value : ",sel.value)
-    // console.log(pNum);
-    pNum = pNum.replace ( /[^\d.]/g, '' );
     
-    console.log(pNum)
-    // localStorage.setItem("Offers", JSON.stringify(0));
     console.log(val)
+    // var index = document.getElementById("form-select");
+    // let sel = document.getElementsByClassName('form-select');
+    // console.log("sel value : ",sel.value)
+    // console.log(pNum);
+    // pNum = pNum.replace ( /[^\d.]/g, '' );
+    
+    // console.log(pNum)
+    // localStorage.setItem("Offers", JSON.stringify(0));
+    
     let str1 = val.replace ( /[^\d.]/g, '' );
     let total = parseInt(str1, 10)
     // localStorage.setItem("Offers", JSON.stringify(val)); // vista i local storage nyja magnið 
