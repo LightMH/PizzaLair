@@ -2,7 +2,7 @@
 {% block content %}
     <link rel="stylesheet" href="/static/css/offers.css">
     <div class="offersOnSite">
-        <div class="offerHeader">
+        <div class="offers">
             <h2>Tilboð</h2>
         </div>
         <div class="offerdisplay">
@@ -11,9 +11,9 @@
                     <div class="flex-container">
                         <div class="card-container">
                             <img class='img-container' src='/static/images/Offer_img.png' alt='Offer_image'>
-                            <div class="card shadow-sm" style="border-radius: 5px">
+                            <div class="card shadow-sm" style="border-radius: 0px">
                                 <div class="card-body">
-                                    <h5 class="card-text"><b>{{ offer.name }}</b></h5>
+                                    <h4 class="card-text"><b>{{ offer.name }}</b></h4>
                                     <p class="offerType">{{ offer.description }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
