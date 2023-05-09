@@ -68,3 +68,16 @@
     text-decoration: none;
     position: relative;
 }
+
+.orderCounter {
+    position: absolute;
+    border-radius: 50%;
+    padding: 5px;
+    background: white;
+    border: 3px solid white;
+    color: black;
+    text-align: center;
+    text-decoration-color: white;
+    font: 15px Arial, sans-serif;
+    margin-left: 67px;
+}
