@@ -27,12 +27,14 @@ function onLoadC() {
     let pizzaPrices = 0
     
     // console.log(cartItems)
-    if(products) {
-        
+    if(products.length == null) {
+        let product_lenght = 1
         console.log(cartItems)
         
+    }else {
+        product_lenght = products.length
     }
-    for (let i=0; i < products.length; i++) {
+    for (let i=0; i < product_lenght; i++) {
         console.log(cartItems[i])
         if(cartItems[i]) {
             console.log(cartItems[i].ID)
@@ -87,6 +89,67 @@ function onLoadC() {
 }
 
 
+
+function onLoadO() { 
+    let string = ""
+    let offers = localStorage.getItem('Offers');
+    const items = localStorage.getItem('cartNumbers')
+    offerItems = JSON.parse(offers);
+    let totalPrice = 0
+    
+    const tdOffer = document.createElement('td')
+    const tr = document.createElement('tr')
+    let pizzaPrices = 0
+    let offersName = localStorage.getItem('Offer Name')
+    const tdPrice = document.createElement('td')
+    console.log(offersName)
+    const checkID = document.getElementById('tableOffer');
+    const tdName = document.createElement('td')
+    // console.log(cartItems)
+    checkID.appendChild(tr)
+    
+    
+    for (let i=0; i < offers.length; i++) {
+        let intcheck = offerItems[i]
+        intcheck = parseInt(intcheck)
+        
+        if(tdOffer.innerText != offersName){
+            tdOffer.innerText = offersName
+        }
+
+        if(Number.isInteger(intcheck)) {
+            totalPrice += intcheck
+            tdPrice.innerText = intcheck
+        }else {
+            console.log(offerItems[i])
+        }
+
+        if(offerItems[i] != undefined) {
+            console.log("undefined logs")
+            console.log(offerItems[i])
+            
+        }
+        
+
+        // const tdRemoveButton = document.createElement('button')
+
+        }
+        offLenght = offerItems.length
+        for (let i=0; i < offLenght-1; i++) {
+            console.log("pizzas", offerItems[i])
+            
+            string += offerItems[i] + " & "
+            
+        }
+        string = string.slice(0,-2)
+        tdName.innerText = string
+        
+
+        tr.append(tdOffer)
+        tr.append(tdName)
+        tr.appendChild(tdPrice)
+        document.querySelector('.totalprice span').textContent = totalPrice;
+    }
 
 
 function empty() {
@@ -144,4 +207,5 @@ function addPizza(button) {
 
 
 onLoadC()
+onLoadO()
 onLoadCartNumbers()

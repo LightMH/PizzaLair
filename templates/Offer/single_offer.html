@@ -19,7 +19,7 @@
             <div class="pizzasInOffer">
                 {% for number in offer.range_of_pizzas %}
                     <label for="pizza1" class="form-label" id="drop-">Pizza {{ number }}</label>
-                    <select class="form-select" id="select-{{ number }}" onchange="check(event,this.value)" required>
+                    <select class="form-select" id="select-{{ number }}" required>
                     <!-- <select class="form-select" id="select" required> -->
 
                         <option></option>

@@ -7,117 +7,120 @@ let setja_offer = document.querySelectorAll('.add-cart'); // sja til
 let price = document.getElementById('pizza.price');
 // let selecter = document.getElementById('select')
 let offer = document.getElementById('offer.name'); // sja til
+
+
 let offers = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
     {
         Offer: offer,
         Price: price
     }
 ];
-let addCarts = document.querySelectorAll('.add-cart');
-function addOffer(values) {
-    console.log(values)
-}
+
 
 let offer_list = []
-for (let i=0; i < offers.length; i++) { 
 
-    addCarts[i].addEventListener('click', () => { // bæta i körfu takki
-        console.log("Added to cart");
-        addOffer(offers[i]);
-    })
+let button = document.querySelector(".add-cart");
+button.addEventListener("click", () => {
+    console.log("Button clicked.");
+
     
-}
 
 
+    let pizzas = []
+    let value1 = $('#select-1.form-select').val()
+    let value2 = $('#select-2.form-select').val()
 
-let pNum = document.getElementById('drop-').innerText;
+    let products = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
+    {
+        ID: offer,
+        Name: valname,
+        Price: valprice,
+        inCart: 0
+    }
+];
 
-function check(event, val) {
-    let list = []
-    
-    console.log(val)
-    // var index = document.getElementById("form-select");
-    // let sel = document.getElementsByClassName('form-select');
-    // console.log("sel value : ",sel.value)
-    // console.log(pNum);
-    // pNum = pNum.replace ( /[^\d.]/g, '' );
-    
-    // console.log(pNum)
-    // localStorage.setItem("Offers", JSON.stringify(0));
-    
-    let str1 = val.replace ( /[^\d.]/g, '' );
-    let total = parseInt(str1, 10)
-    // localStorage.setItem("Offers", JSON.stringify(val)); // vista i local storage nyja magnið 
+    let offerName = document.getElementById('offer.name').innerText;
+    console.log(offerName)
+
+    let offer_name = localStorage.getItem('Offer Name');
+    localStorage.setItem('Offer Name', offerName);
+
     let curr_price = localStorage.getItem('Offers')
     curr_price = JSON.parse(curr_price)
     curr_price = parseInt(curr_price)
-    console.log(curr_price)
+
+    let str1 = value1.replace ( /[^\d.]/g, '' );
+    let str2 = value2.replace ( /[^\d.]/g, '' );
+    let valueInt1 = parseInt(str1, 10)
+    let valueInt2 = parseInt(str2, 10)
+
+    
+    console.log('Testing', valueInt1)
+    console.log('Testing', valueInt2)   
+    value1 = value1.slice(0,-7)
+    value2 = value2.slice(0,-7)
+    console.log('Testing', value1)
+    console.log('Testing', value2)
+
+    pizzas.push(value1,value2)
+    console.log(pizzas)
+
     if(isNaN(curr_price)) {
-        localStorage.setItem("Offers", JSON.stringify(total));
-        return
+
+        if(valueInt1 > valueInt2) {
+            pizzas.push(valueInt1);
+            localStorage.setItem("Offers", JSON.stringify(pizzas));
+        } else {
+            pizzas.push(valueInt2);
+            localStorage.setItem("Offers", JSON.stringify(pizzas));
+            
+        }
+        // localStorage.setItem("Offers", JSON.stringify(pizzas));
+        // return
     }
-    if(total > curr_price) {
+    if(valueInt1 > valueInt2) {
         
-        localStorage.setItem("Offers", JSON.stringify(total));
-    }
-    if(total < curr_price) {
+        localStorage.setItem("Offers", JSON.stringify(pizzas, valueInt1));
+    } else {
+        localStorage.setItem("Offers", JSON.stringify(pizzas, valueInt2));
         
-        localStorage.setItem("Offers", JSON.stringify(total));
     }
 
-    console.log(list)
-    list.push(val)
+
+    pr = localStorage.getItem('Offers')
+    console.log(pr)
     
 
-    console.log(total)
-    console.log(list)
-    
-    
-}
+});
 
 
+button.addEventListener("click", () => {
 
-// for (let i=0; i < setja_offer.length; i++) { 
+    let cartItems = localStorage.getItem('productsInCart'); // sækja Id ..
+    cartItems = JSON.parse(cartItems); 
 
-//     setja_offer.addEventListener('click', () => { // bæta i körfu takki
-//         console.log("Added offer to cart");
-//         setja_offer(offers[i])
-//         console.log(offers[i])
-//     })
-    
-// }
-
-
-
-// function setOffers(offers) { // setja ID og inCart sem json til að geyma svo hægt sé að sækja í seinna
-
-//     let offerItems = localStorage.getItem('Offers'); // sækja Id ..
-//     offerItems = JSON.parse(offerItems); 
-
-//     if(offerItems !== null) { 
-//         if(offerItems[offers.ID] == undefined){
-//             offerItems = {
-//                 ...offerItems, // ... er JS magic for loop
-//                 [offers.ID]: offers,
-//             }
-//         }
-//         offerItems[offers.ID].inCart += 1
-//     } else {
-//         offers.inCart = 1;
-//         offerItems = {
-//             [offers.ID]: offers
-//         }
-//     }
-//     localStorage.setItem("Offers", JSON.stringify(offerItems)); // vista i local storage nyja magnið 
-// }
-
+    if(cartItems !== null) { 
+        if(cartItems[product.ID] == undefined){
+            cartItems = {
+                ...cartItems, // ... er JS magic for loop
+                [product.ID]: product,
+            }
+        }
+        cartItems[product.ID].inCart += 1
+    } else {
+        product.inCart = 1;
+        cartItems = {
+            [product.ID]: product
+        }
+    }
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems)); // vista i local storage nyja magnið 
+})
 
 function empty() {
     //empty cart, refresh siðu 
     console.log("empty")
     if(localStorage.getItem('Offers')){
         localStorage.removeItem('Offers');
-        
       
       }
     
