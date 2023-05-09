@@ -6,9 +6,9 @@
 }
 
 .container h1 {
-  margin-left: 410px;
-  font-family: "Book Antiqua";
-  color: darkred;
+    margin-left: 410px;
+    font-family: var(--primary-font);
+    color: darkred;
 }
 
 .Background {

@@ -3,7 +3,7 @@
     background-color: crimson;
     color: white;
     text-align: center;
-    font-family: "Book Antiqua";
+    font-family: var(--primary-font);
     margin: auto;
     width: 30%;
 }
@@ -16,7 +16,7 @@ h2 {
 
 .menuText {
     text-align: center;
-    font-family: "Book Antiqua";
+    font-family: var(--primary-font);
 }
 
 .pizzas {
