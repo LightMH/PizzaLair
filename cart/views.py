@@ -19,3 +19,7 @@ def checkout_index(request):
 def confirmation_index(request):
     return render(request, 'cart/confirmation.html')
 
+
+def final_index(request):
+    return render(request, 'cart/final-page.html')
+
