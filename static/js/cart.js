@@ -40,7 +40,7 @@ function onLoadC() {
     for (let i=0; i < 600; i++) {
         console.log(cartItems[i])
         if(cartItems[i]) {
-            if(cartItems[i].OID > 500) { console.log("above 1000"); onLoadO(cartItems[i].OID) }
+            if(cartItems[1].OID > 500 ) { console.log("above 1000"); onLoadO(cartItems[i]) }
             console.log(cartItems[i].ID)
             console.log(cartItems[i].Name)
             console.log(cartItems[i].Price)
@@ -95,53 +95,56 @@ function onLoadC() {
 
 
 function onLoadO(offerID) { 
-    let string = ""
-    let totalPrice = 0
+    if(offerID.OID > 500){
+        let string = ""
+        let totalPrice = 0
+        console.log("OFFER SHITTER", offerID)
+        
+        let products = offerID;
+        let offersID = localStorage.getItem('Offers');
+        const items = localStorage.getItem('cartNumbers')
+        // let cartItems = JSON.parse(products);
+        offersID = JSON.parse(offersID)
+        let cartTotal = localStorage.getItem('cartTotal')
+        
+        let index = 1
+        console.log("ososoosoos")
     
-    
-    let products = localStorage.getItem('productsInCart');
-    let offersID = localStorage.getItem('Offers');
-    const items = localStorage.getItem('cartNumbers')
-    let cartItems = JSON.parse(products);
-    offersID = JSON.parse(offersID)
-    let cartTotal = localStorage.getItem('cartTotal')
-    
-    let index = offerID
-    console.log("ososoosoos")
-  
 
 
-    const tdOffer = document.createElement('td')
-    const tr = document.createElement('tr')
-    let pizzaPrices = 0
-    let offersName = localStorage.getItem('Offer Name')
-    const tdPrice = document.createElement('td')
-    console.log(offersName)
-    products = JSON.parse(products);
-    console.log(index)
-    console.log("Parsed",products)
-    console.log("Parsed check id",products[index].OID)
-    console.log("Parsed check name",products[index].Name)
-    console.log("Parsed check price",products[index].Price)
+        const tdOffer = document.createElement('td')
+        const tr = document.createElement('tr')
+        let pizzaPrices = 0
+        let offersName = localStorage.getItem('Offer Name')
+        const tdPrice = document.createElement('td')
+        console.log(offersName)
+        // products = JSON.parse(products);
+        console.log(index)
+        console.log("Parsed",products)
+        console.log("Parsed check id",products.OID)
+        console.log("Parsed check name",products.Name)
+        console.log("Parsed check price",products.Price)
 
-    const checkID = document.getElementById('tableOffer');
-    const tdName = document.createElement('td')
-    // console.log(cartItems)
-    checkID.appendChild(tr)
-    
-    
-    
-    tr.append(tdOffer)
-    tr.append(tdName)
-    tr.appendChild(tdPrice)
-    tdOffer.innerText = offersName
-    tdName.innerText = products[index].Name
-    tdPrice.innerText = products[index].Price
-    price_correct = products[index].Price
-    cartTotal = parseInt(cartTotal)
-    cartTotal = cartTotal + products[index].Price
-    totalPrice = cartTotal
-    console.log(totalPrice)
+        const checkID = document.getElementById('tableOffer');
+        const tdName = document.createElement('td')
+        // console.log(cartItems)
+        checkID.appendChild(tr)
+        
+        
+        
+        tr.append(tdOffer)
+        tr.append(tdName)
+        tr.appendChild(tdPrice)
+        tdOffer.innerText = offersName
+        tdName.innerText = products.Name
+        tdPrice.innerText = products.Price
+        price_correct = products.Price
+        cartTotal = parseInt(cartTotal)
+        cartTotal = cartTotal + products.Price
+        totalPrice = cartTotal
+        console.log(totalPrice)
+        document.querySelector('.totalprice span').textContent = totalPrice;
+    }
 
 
 
@@ -159,7 +162,7 @@ function onLoadO(offerID) {
     // document.querySelector('.totalprice span').textContent = pp;
     // document.querySelector('.magn span').textContent = items;
     // localStorage.setItem('cartTotal',totalPrice )
-    document.querySelector('.totalprice span').textContent = totalPrice;
+    
 
 }
 function empty() {
