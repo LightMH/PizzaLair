@@ -38,14 +38,16 @@
 }
 
 .OfferName {
-    background-color: crimson;
-    color: white;
     font-weight: bold;
+    color: darkred;
     text-align: center;
+    border: solid;
+    padding: 5px;
 }
 
 .descriptionContainer {
     font-family: var(--primary-font);
+    margin-top: 15px;
 }
 
 .offerInfo {
@@ -77,4 +79,16 @@
     background-color: #e5c7c2;
     color: #474747;
     height: 200px;
+}
+
+.addToCartBtn {
+    border-radius: 5px;
+    background-color: crimson;
+    border-color: crimson;
+    color: white;
+    margin-top: 10px;
+}
+
+.addToCartBtn:hover {
+    opacity: 0.7;
 }
