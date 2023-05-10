@@ -8,7 +8,7 @@
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Upplýsingar um tengilið</h4>
                 <form class="form form-horizontal"
-                      action="{% url 'confirmation-index' %}"
+{#                      action="{% url 'confirmation-index' %}"#}
                       method="post">
                     {% csrf_token %}
                     <div class="row g-3">
@@ -77,7 +77,7 @@
 
                         <div class="my-3">
                             <div class="form-check">
-                                <input name="payAtPickUp" id="payAtPickUp" name="paymentMethod"
+                                <input name="paymentMethod" id="payAtPickUp" name="paymentMethod"
                                        type="radio" class="form-check-input" checked required=""
                                         oninvalid="this.setCustomValidity('Vinsamlegast veldu borgunaraðferð')">
                                 <label class="form-check-label" for="credit">Borga við afhendingu</label>
@@ -134,7 +134,9 @@
                         </div>
                         </form>
                         <hr class="my-4">
+                            <a href='{% url 'payment-index' %}'>
                             <input class="confirmation-button" type="submit" value="Greiða pöntun">
+                             </a>
             </div>
         </div>
     </main>

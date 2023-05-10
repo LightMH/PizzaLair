@@ -23,3 +23,7 @@ def confirmation_index(request):
 def final_index(request):
     return render(request, 'cart/final-page.html')
 
+
+def payment_index(request):
+    return render(request, 'cart/payment.html')
+
