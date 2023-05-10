@@ -11,10 +11,6 @@ main {
     height: fit-content;
     text-align: center;
     border-radius: 20px;
-}
-
-.pay {
     color: white;
     font-size: x-large;
-    font-family: "Book Antiqua";
 }

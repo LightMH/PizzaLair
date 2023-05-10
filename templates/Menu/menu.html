@@ -70,7 +70,7 @@
                                         {% else %}
                                             <p></p>
                                         {% endif %}
-                                        <a class="pricing"> Verð:</a> {{ pizza.pizza.price }} kr.
+                                        <a class="pricing">Verð: {{ pizza.pizza.price }} kr.</a>
                                         <p class="topping">Álegg:</p>{% for topping_name in pizza.toppings %}
                                         {% if forloop.last %}
                                             {{ topping_name }}.
