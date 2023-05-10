@@ -18,7 +18,8 @@ valprice = parseFloat(valprice);
 
 let products = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
     {
-        ID: valp,
+        ID: 1,
+        VID: valp,
         Name: valname,
         Price: valprice,
         inCart: 0

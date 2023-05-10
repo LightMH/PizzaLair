@@ -23,11 +23,43 @@ let button = document.querySelector(".add-cart");
 button.addEventListener("click", () => {
     // console.log("Button 1 clicked .");
 
-    var valp = document.getElementById('offer.id').innerText;
+    var valID = document.getElementById('offer.id').innerText;
+    valID = parseInt(valID)  + 500
 
     //For offers with id 2 og 3, getting the price from the description
-    let offerprice = document.getElementById('offerDescription').innerText;
-    console.log(offerprice)
+    let offerdesc = document.getElementById('offerDescription').innerText;
+    console.log(offerdesc)
+    let offerLen = offerdesc.length
+    let offerPrice = offerdesc.slice(offerLen-8,offerLen-3)
+    console.log("20-30",offerPrice)
+    offerPrice = parseInt(offerPrice)
+    console.log("Offer ID --> ",valID)
+    let offerprice_len = offerdesc.slice(6,8)
+    console.log("After Slice",offerPrice)
+    let valu = 1
+    let value = []
+    let str = []
+    let str_for = []
+
+    
+    for (let i=0; i < offerprice_len; i++) { 
+        
+        let add = '#select-'+valu+'.form-select'
+        value[valu] = $(add).val()
+        console.log(value[valu])
+
+
+        
+
+
+
+        valu += 1
+    }
+    // for (let i = 0; i < 4; i++) {
+    //     str_for[i] += str2[i]
+    //     str_for += str1[i]
+    //     count += 1}
+
 
     //getting the values they choose
     let values = document.getElementsByClassName('form-select')
@@ -73,64 +105,71 @@ button.addEventListener("click", () => {
     value2 = value2.slice(0, -10)
     console.log('Testing string', value1)
     console.log('Testing string', value2)
-    let str_for1 = ""
     let str_for2 = ""
-
+    let str_for1 = ""
+   
     for (let i = 0; i < 4; i++) {
         let count = 0
         str_for2 += str2[i]
         str_for1 += str1[i]
         count += 1
 
-        // if(count == 4) {
-        //     str_for2 = parseInt(str2, 10)
-        //     str_for1 = parseInt(str1, 10)
-        // }
+        if(count == 4) {
+            str_for2 = parseInt(str2, 10)
+            str_for1 = parseInt(str1, 10)
+        }
     }
-    console.log("for loop price 1", str_for1)
-    console.log("for loop price 2", str_for2)
+    // console.log("for loop price 1", str_for1)
+    // console.log("for loop price 2", str_for2)
     // str_for2 = parseInt(str2)
     // str_for1 = parseInt(str1)
-    console.log("for loop price 1", str_for1)
-    console.log("for loop price 2", str_for2)
+    // console.log("for loop price 1", str_for1)
+    // console.log("for loop price 2", str_for2)
     pizzas.push(value1, value2)
     console.log(pizzas)
 
     let str_int1 = parseInt(str_for1)
     let str_int2 = parseInt(str_for2)
-    valp = parseInt(valp)
-    if (str_int1 > str_int2) {
+    
+    if(valID == 501) {
+        if (str_int1 > str_int2) {
 
-        saveInt = str_int1
+            saveInt = str_int1
+        } else {
+
+            saveInt = str_int2
+
+        }
     } else {
-
-        saveInt = str_int2
-
-
+        saveInt = offerPrice
     }
-    // localStorage.setItem("Offers", JSON.stringify(pizzas));
-    // return
+    
+    
+    
 
-    if (str_for1 > str_for2) {
+    // if (str_for1 > str_for2) {
 
-        localStorage.setItem("Offers", JSON.stringify(valp));
-    } else {
-        localStorage.setItem("Offers", JSON.stringify(valp));
+    //     localStorage.setItem("Offers", JSON.stringify(valp));
+    // } else {
+    //     localStorage.setItem("Offers", JSON.stringify(valp));
+    // }
 
-    }
+   
 
 
-    valp = valp * (5 ** 6)
-    console.log("ID int test", valp)
-    pr = localStorage.getItem('Offers')
-    console.log(pr)
+
+    
+    // pr = localStorage.getItem('Offers')
+    // console.log(pr)
 
     let product = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
         {
-            ID: valp,
+            ID: 1,
+            OID: valID,
             Name: pizzas,
             Price: saveInt,
-            inCart: 0
+            inCart: 0,
+            OfferName: offerName,
         }
     ];
     setItems(product[0]);
@@ -197,6 +236,7 @@ function setItems(product) { // setja ID og inCart sem json til að geyma svo h�
     if (cartItems !== null) {
 
         if (cartItems[product.ID] == undefined) {
+            
             cartItems = {
                 ...cartItems, // ... er JS magic for loop
                 [product.ID]: product,
