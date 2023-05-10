@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/static/css/payment.css">
+{% extends 'base.html' %}
+{% block content %}
+        <main>
+        <h4>Greiðsla</h4>
+        <div class="row g-5">
+            <div class="col-md-5 col-lg-4 order-md-last">
+            </div>
+            <div class="col-md-7 col-lg-8">
+                <form class="form form-horizontal"
+                      action="{% url 'confirmation-index' %}"
+                      method="post">
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="cc-name" class="form-label">Nafn korthafa</label>
+                            <input name="cc-name" type="text" class="form-control"
+                                   id="cc-name" placeholder="" value="" required=""
+                                    oninvalid="this.setCustomValidity('Vinsamlegast settu nafn korthafa')"
+                                    oninput="setCustomValidity('')">
+                            <div class="invalid-feedback">
+                                Þarft að slá inn nafn korthafa.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="cc-experation" class="form-label">Gildistími</label>
+                            <div class="input-group has-validation">
+                                <input name=cc-experation" type="text" class="form-control"
+                                       id="cc-experation" placeholder="" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast settu inn gildistímann')"
+                                        oninput="setCustomValidity('')">
+                                <div class="invalid-feedback">
+                                    Þarft að slá inn gildistímann.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="cc-cvv" class="form-label">CVV</label>
+                            <div class="input-group has-validation">
+                                <input name="cc-cvv" type="text" class="form-control"
+                                       id="cc-cvv" placeholder="" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast settu inn CVV')"
+                                        oninput="setCustomValidity('')">
+                                <div class="invalid-feedback">
+                                    Þarft að slá inn CVV.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input name="paymentMethod" id="payAtPickUp" name="paymentMethod"
+                                       type="radio" class="form-check-input" value="Borga við afhendingu"
+{#                                       checked required=""#}
+{#                                        oninvalid="this.setCustomValidity('Vinsamlegast veldu borgunaraðferð')"#}
+                                >
+                                <label class="form-check-label" for="credit">Borga við afhendingu</label>
+                            </div>
+                            <div class="form-check">
+                                <input name="paymentMethod" id="card" name="paymentMethod"
+                                       type="radio" class="form-check-input"
+{#                                            required=""#}
+{#                                        oninvalid="this.setCustomValidity('Vinsamlegast veldu borgunaraðferð')"#}
+                                >
+                                <label class="form-check-label" for="paypal">Borga með korti</label>
+                            </div>
+                            </div>
+                        </div>
+                        </form>
+                <input class="Button" type="submit" value="Klára pöntun">
+            </div>
+        </div>
+    </main>
+{% endblock %}

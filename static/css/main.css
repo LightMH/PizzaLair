@@ -59,8 +59,9 @@
 }
 
 .cart_nav {
-    display: inline-block;
+    display: block;
     mix-blend-mode: normal;
+    position: relative;
 }
 
 .cart {
@@ -72,14 +73,13 @@
 
 
 .cartContainer {
-    width: fit-content;
-    height: 80px;
+    height: 50px;
     display: block;
 }
 
 
 .orderCounter {
-    position: fixed;
+    position: absolute;
     border-radius: 50%;
     padding: 5px;
     background: white;

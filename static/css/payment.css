@@ -1,0 +1,16 @@
+main {
+    margin-left: 50px;
+}
+
+.Button {
+    align-self: center;
+    background-color: crimson;
+    border-color: crimson;
+    text-decoration: none;
+    width: 300px;
+    height: fit-content;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+    font-size: x-large;
+}

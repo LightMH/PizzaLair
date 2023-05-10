@@ -20,6 +20,11 @@ def confirmation_index(request):
     return render(request, 'cart/confirmation.html')
 
 
+def payment_index(request):
+    test="test"
+    return render(request, 'cart/payment.html')
+
+
 def final_index(request):
     return render(request, 'cart/final-page.html')
 
