@@ -13,7 +13,7 @@
  <main>
     <div class="descriptionContainer">
         <H2 class="OfferName" id="offer.name">{{ offer.name }}</H2>
-        <div class="offerInfo">
+        <div class="offerInfo"> <a id="offer.id">{{ offer.id }}</a>
             <h3 class="offerDescription">{{ offer.description }}</h3>
             <img src="/static/images/Offer_img.png" alt="Offer Image" class="singleOfferImg" id="singleOfferImg">
             <div class="pizzasInOffer">
@@ -24,7 +24,7 @@
 
                         <option></option>
                         {% for pizza in pizzas %}
-                            <option id="pizza.name">{{ pizza.name }} <p id="price">{{ pizza.price }} kr</p></option>
+                            <option id="pizza.name">{{ pizza.name }} <p id="price">{{ pizza.price }} kr</p><p id="pizza.id"> {{ pizza.id }} </p></option>
                             
                         {% endfor %}
                     </select>
@@ -33,7 +33,7 @@
                     Vinsamlegast veldu pizzur í tilboðið.
                 </div>
             </div>
-            <button class="add-cart addToCartBtn" id="{{ offer }}" type="submit" value="Submit">Bæta í körfu</button>
+            <button class="add-cart addToCartBtn" id="{{ offer }}" type="submit" value="Submit" >Bæta í körfu</button>
         </div>
     </div>
 

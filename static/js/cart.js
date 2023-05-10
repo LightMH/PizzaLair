@@ -92,66 +92,71 @@ function onLoadC() {
 
 function onLoadO() { 
     let string = ""
-    let offers = localStorage.getItem('Offers');
-    const items = localStorage.getItem('cartNumbers')
-    offerItems = JSON.parse(offers);
     let totalPrice = 0
+    power = 5**6 + 1
+    index = 1 * power
+    let products = localStorage.getItem('productsInCart');
+    let offersID = localStorage.getItem('Offers');
+    const items = localStorage.getItem('cartNumbers')
+    let cartItems = JSON.parse(products);
     
+    
+    // if(products.length == null) {
+    //     let product_lenght = 1
+    //     console.log(cartItems)
+        
+    // }else {
+    //     product_lenght = products.length
+    // }
+    // for (let i=0; i < product_lenght; i++) {
+    //     console.log(cartItems)
+        
+        // let cartOfferItems1 = 1 - 15626
+        // let cartOfferItems2 = 5626
+
+    if(cartItems) {
+        console.log(cartItems.ID)
+        console.log(cartItems.Name)
+        console.log(cartItems.Price)
+        console.log(cartItems.inCart)
+    }
+
+    
+
+
     const tdOffer = document.createElement('td')
     const tr = document.createElement('tr')
     let pizzaPrices = 0
     let offersName = localStorage.getItem('Offer Name')
     const tdPrice = document.createElement('td')
     console.log(offersName)
+    console.log(products.length)
+    products = JSON.parse(products);
+    console.log(products[index].length)
+    console.log(index)
+    console.log("Parsed",products)
+    console.log("Parsed check id",products[index].ID)
+    console.log("Parsed check name",products[index].Name)
+    console.log("Parsed check price",products[index].Price)
+    
     const checkID = document.getElementById('tableOffer');
     const tdName = document.createElement('td')
     // console.log(cartItems)
     checkID.appendChild(tr)
     
     
-    for (let i=0; i < offers.length; i++) {
-        let intcheck = offerItems[i]
-        intcheck = parseInt(intcheck)
-        
-        if(tdOffer.innerText != offersName){
-            tdOffer.innerText = offersName
-        }
+    totalPrice += products[index].Price
+    tr.append(tdOffer)
+    tr.append(tdName)
+    tr.appendChild(tdPrice)
+    tdOffer.innerText = offersName
+    tdName.innerText = products[index].Name
+    tdPrice.innerText = products[index].Price
+    document.querySelector('.totalprice span').textContent = totalPrice;
+    document.querySelector('.magn span').textContent = items;
+    document.querySelector('.totalprice span').textContent = totalPrice;
 
-        if(Number.isInteger(intcheck)) {
-            totalPrice += intcheck
-            tdPrice.innerText = intcheck
-        }else {
-            console.log(offerItems[i])
-        }
-
-        if(offerItems[i] != undefined) {
-            console.log("undefined logs")
-            console.log(offerItems[i])
-            
-        }
-        
-
-        // const tdRemoveButton = document.createElement('button')
-
-        }
-        offLenght = offerItems.length
-        for (let i=0; i < offLenght-1; i++) {
-            console.log("pizzas", offerItems[i])
-            
-            string += offerItems[i] + " & "
-            
-        }
-        string = string.slice(0,-2)
-        tdName.innerText = string
-        
-
-        tr.append(tdOffer)
-        tr.append(tdName)
-        tr.appendChild(tdPrice)
-        document.querySelector('.totalprice span').textContent = totalPrice;
-    }
-
-
+}
 function empty() {
     //empty cart, refresh siðu 
     console.log("empty")
