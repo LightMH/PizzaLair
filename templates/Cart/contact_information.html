@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <link rel="stylesheet" href="/static/css/contact_information.css">
+    <h4 class="contactHeader">Tengiliðsupplýsingar</h4>
+    <form class="form form-horizontal" action="{% url 'contact_information' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="fullName" for="{{ form.id_full_name }}">Fullt nafn:</label>
+            {{ form.full_name }}
+        </div>
+
+        <div class="form-group">
+            <label class="streetName" for="{{ form.id_street_name }}">Götuheiti:</label>
+            {{ form.street_name }}
+        </div>
+
+        <div class="form-group">
+            <label class="houseName" for="{{ form.id_house_number }}">Húsanúmer:</label>
+            {{ form.house_number }}
+        </div>
+
+        <div class="form-group">
+            <label class="city" for="{{ form.id_city }}">Borg:</label>
+            {{ form.city }}
+        </div>
+
+        <div class="form-group">
+            <label class="country" for="{{ form.id_county }}">Veldu land:</label>
+            {{ form.country }}
+        </div>
+
+        <div class="form-group">
+            <label class="postalCode" for="{{ form.id_postal_code }}">Póstnúmer:</label>
+            {{ form.postal_code }}
+        </div>
+        <input type="submit" value="Halda áfram í greiðslu" class="continueBtn" style="clear:both; margin: 10px 0" />
+    </form>
+{% endblock %}
