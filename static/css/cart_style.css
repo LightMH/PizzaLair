@@ -24,6 +24,21 @@ hr {
       display:block;
       margin-left:0; */
 }
+.remove-btn{
+    background-color: darkred;
+    border-color: darkred;
+
+}
+.add-btn{
+    background-color: darkred;
+    border-color: darkred;
+}
+
+.redcolor{
+    background-color: darkred;
+    border-color: darkred;
+}
+
 
 h1 {
     margin: 12px;
