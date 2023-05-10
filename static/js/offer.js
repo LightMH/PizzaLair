@@ -56,7 +56,7 @@ button.addEventListener("click", () => {
         str_for[i] += str2[i]
         str_for += str1[i]
        
-
+    }
 
     //getting the values they choose
     // let values = document.getElementsByClassName('form-select')
@@ -151,13 +151,6 @@ button.addEventListener("click", () => {
     //     localStorage.setItem("Offers", JSON.stringify(valp));
     // }
 
-   
-
-
-
-    
-    // pr = localStorage.getItem('Offers')
-    // console.log(pr)
 
     let product = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
         {
@@ -165,14 +158,14 @@ button.addEventListener("click", () => {
             OID: valID,
             Name: pizzas,
             Price: saveInt,
-            inCart: 0,
+            inCart: 1,
             OfferName: offerName,
         }
     ];
-    setItems(product[1]);
+    setItems(product);
 
-};
 
+})
 
 
 
@@ -201,25 +194,24 @@ function setItems(product) { // setja ID og inCart sem json til að geyma svo h�
             }
         }
         cartItems[product.ID].inCart += 1
-        if (cartItems[product.ID].inCart == 2) {
-            cartItems[product.ID].inCart = 2
-            // localStorage.setItem('cartNumbers', productNumbers = 2);
-            // localStorage.setItem('cartNumbers', productNumbers = 2);
-            localStorage.setItem("productsInCart", JSON.stringify(cartItems)); // vista i local storage nyja magnið 
+        // if (cartItems[product.ID].inCart == 2) {
+        //     cartItems[product.ID].inCart = 2
+        //     // localStorage.setItem('cartNumbers', productNumbers = 2);
+        //     // localStorage.setItem('cartNumbers', productNumbers = 2);
+        //     localStorage.setItem("productsInCart", JSON.stringify(cartItems)); // vista i local storage nyja magnið 
 
-            return
-        }
+        //     return
+        // }
 
     } else {
         product.inCart = 1;
         cartItems = {
-            [product.ID + 1]: product
+            [product.ID]: product
         }
     }
     localStorage.setItem("productsInCart", JSON.stringify(cartItems)); // vista i local storage nyja magnið 
-
 }
-})
+
 
 // function empty() {
 //     //empty cart, refresh siðu 
