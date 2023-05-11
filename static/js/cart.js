@@ -27,14 +27,17 @@ function onLoadC() {
     let pizzaPrices = 0
     
     // console.log(cartItems)
-    if(products) {
-        
+    if(products.length == null) {
+        let product_lenght = 1
         console.log(cartItems)
         
+    }else {
+        product_lenght = products.length
     }
-    for (let i=0; i < products.length; i++) {
+    for (let i=0; i < 600; i++) {
         console.log(cartItems[i])
         if(cartItems[i]) {
+            if(cartItems[i].ID >=500 ) { console.log("above 1000"); onLoadO(cartItems[i],i) }
             console.log(cartItems[i].ID)
             console.log(cartItems[i].Name)
             console.log(cartItems[i].Price)
@@ -88,13 +91,80 @@ function onLoadC() {
 
 
 
+function onLoadO(offer,i) { 
+    let string = ""
+    let totalPrice = 0
+    
+    // let index = offer.ID
+    let products = localStorage.getItem('productsInCart');
+    let offersID = localStorage.getItem('Offers');
+    let items = localStorage.getItem('cartNumbers')
+    let cartItems = JSON.parse(products);
+    
+    
+    // if(products.length == null) {
+    //     let product_lenght = 1
+    //     console.log(cartItems)
+        
+    // }else {
+    //     product_lenght = products.length
+    // }
+    // for (let i=0; i < product_lenght; i++) {
+    //     console.log(cartItems)
+        
+        // let cartOfferItems1 = 1 - 15626
+        // let cartOfferItems2 = 5626
 
+    if(offer) {
+        console.log(offer.ID)
+        console.log(offer.Name)
+        console.log(offer.Price)
+        console.log(offer.OfferName)
+    }
+
+    
+
+
+    let tdOffer = document.createElement('td')
+    let tr = document.createElement('tr')
+    let pizzaPrices = 0
+    let offersName = localStorage.getItem('Offer Name')
+    let tdPrice = document.createElement('td')
+    // console.log(offersName)
+    // console.log(products.length)
+    products = JSON.parse(products);
+    // console.log(products[index].length)
+    // console.log(index)
+    // console.log("Parsed",products)
+    // console.log("Parsed check id",products[index].ID)
+    // console.log("Parsed check name",products[index].Name)
+    // console.log("Parsed check price",products[index].Price)
+    
+    let checkID = document.getElementById('tableOffer');
+    let tdName = document.createElement('td')
+    // console.log(cartItems)
+    checkID.appendChild(tr)
+    
+    
+    totalPrice += products.Price
+    tr.append(tdOffer)
+    tr.append(tdName)
+    tr.appendChild(tdPrice)
+    tdOffer.innerText = offer.OfferName
+    tdName.innerText = offer.Name
+    tdPrice.innerText = offer.Price
+    document.querySelector('.totalprice span').textContent = totalPrice;
+    document.querySelector('.magn span').textContent = items;
+    document.querySelector('.totalprice span').textContent = totalPrice;
+
+}
 function empty() {
     //empty cart, refresh siðu 
     console.log("empty")
-    if(localStorage.getItem('productsInCart'),localStorage.getItem('cartNumbers')){
+    if(localStorage.getItem('productsInCart'),localStorage.getItem('cartNumbers'),localStorage.getItem('offerCount')){
         localStorage.removeItem('productsInCart');
         localStorage.removeItem('cartNumbers');
+        localStorage.removeItem('offerCount');
         
         location.reload()
       
@@ -144,4 +214,5 @@ function addPizza(button) {
 
 
 onLoadC()
+onLoadO()
 onLoadCartNumbers()
