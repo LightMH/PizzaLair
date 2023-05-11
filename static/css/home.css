@@ -1,26 +1,30 @@
 
 .homeContainer {
     display: flex;
+    column-gap: 20px;
+}
+
+.homeContainer > * {
+    flex: 1;
 }
 
 .eldeyImg {
     background-image: url("static/images/PizzaLair_front_page.png");
     background-size: 100%;
-    width: 60%;
-    height: 800px;
+    width: 55%;
+    height: 100%;
 }
 
 .homeHeader {
     color: darkred;
     font-size: xx-large;
     margin: 10px;
-    text-align: center;
 }
 
 .eldeyDescription {
     font-family: var(--primary-font);
     font-size: x-large;
-    float: right;
     font-weight: lighter;
-    width: 300px;
+    text-align: center;
+    margin-right: 100px;
 }
