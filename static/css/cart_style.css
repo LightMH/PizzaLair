@@ -40,6 +40,24 @@ h1 {
 .productcont {
     display: flex;
 }
+.add-btn {
+    background-color: darkred;
+    border-color: darkred;
+}
+
+.remove-btn {
+    background-color: darkred;
+    border-color: darkred;
+}
+
+#checkout {
+    background-color: darkred;
+    border-color: darkred;
+}
+#emptycart {
+    background-color: darkred;
+    border-color: darkred;
+}
 
 .product {
     padding: 1em;
