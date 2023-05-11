@@ -1,9 +1,17 @@
+.offerHeader {
+    color: darkred;
+    font-size: xx-large;
+    margin: 10px;
+    text-align: center;
+}
+
+
 .offers {
     border-radius: 10px;
     background-color: crimson;
     color: white;
     text-align: center;
-    font-family: "Book Antiqua";
+    font-family: var(--primary-font);
     margin: auto;
     width: 30%;
 }
@@ -36,25 +44,26 @@
     display: none;
 }
 .OfferName {
-    background-color: crimson;
-    color: white;
     font-weight: bold;
+    color: darkred;
     text-align: center;
+    border: solid;
+    padding: 5px;
 }
 
 .descriptionContainer {
-    font-family: "Book Antiqua";
+    font-family: var(--primary-font);
+    margin-top: 15px;
 }
 
 .offerInfo {
     margin-left: 20px;
 }
 
-.addToCartBtn {
-    background-color: crimson;
+#orderBtn {
+    background-color: darkred;
     color: white;
     border-color: darkred;
-    margin-top: 20px;
 }
 
 .form-label {
@@ -64,4 +73,28 @@
 
 .pizza_price {
     display: none;
+}
+
+.card-container {
+    border: thin solid #828282;
+    border-radius: 5px;
+    height: 480px;
+}
+
+.card-body {
+    background-color: #e5c7c2;
+    color: #474747;
+    height: 200px;
+}
+
+.addToCartBtn {
+    border-radius: 5px;
+    background-color: crimson;
+    border-color: crimson;
+    color: white;
+    margin-top: 10px;
+}
+
+.addToCartBtn:hover {
+    opacity: 0.7;
 }

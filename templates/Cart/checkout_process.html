@@ -7,11 +7,16 @@
             </div>
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Upplýsingar um tengilið</h4>
-                <form class="needs-validation" novalidate>
+                <form class="form form-horizontal"
+                      action="{% url 'confirmation-index' %}"
+                      method="post">
+                    {% csrf_token %}
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="fullName" class="form-label">Fullt nafn</label>
-                            <input type="text" class="form-control" id="fullName" placeholder="" value="" required>
+                            <input name="fullName" type="text" class="form-control"
+                                   id="fullName" placeholder="" value="" required=""
+                                    oninvalid="this.setCustomValidity('Vinsamlegast settu inn fullt nafn')">
                             <div class="invalid-feedback">
                                 Þarft að slá inn fullt nafn.
                             </div>
@@ -19,7 +24,9 @@
                         <div class="col-12">
                             <label for="streetName" class="form-label">Götuheiti</label>
                             <div class="input-group has-validation">
-                                <input type="text" class="form-control" id="streetName" placeholder="" required>
+                                <input name=streetName" type="text" class="form-control"
+                                       id="streetName" placeholder="" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast settu inn götuheiti')">
                                 <div class="invalid-feedback">
                                     Þarft að slá inn götuheiti.
                                 </div>
@@ -29,7 +36,9 @@
                         <div class="col-12">
                             <label for="streetNumber" class="form-label">Húsanúmer</label>
                             <div class="input-group has-validation">
-                                <input type="text" class="form-control" id="streetNumber" placeholder="" required>
+                                <input name="streetNumber" type="text" class="form-control"
+                                       id="streetNumber" placeholder="" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast settu inn húsanúmer')">
                                 <div class="invalid-feedback">
                                     Þarft að slá inn húsanúmer.
                                 </div>
@@ -39,7 +48,9 @@
 
                         <div class="col-12">
                             <label for="city" class="form-label">Borg</label>
-                            <input type="text" class="form-control" id="city" placeholder="" required>
+                            <input name="city" type="text" class="form-control" id="city"
+                                   placeholder="" required=""
+                                    oninvalid="this.setCustomValidity('Vinsamlegast settu inn nafn á borginni')">
                             <div class="invalid-feedback">
                                 Þarf að slá inn borg.
                             </div>
@@ -48,7 +59,7 @@
 
                         <div class="col-md-5">
                             <label for="country" class="form-label">Land</label>
-                            <select class="form-select" id="country" required>
+                            <select class="form-select" id="country" required="">
                                 <option value="">Velja...</option>
                                 <option>Ísland</option>
                                 <option>Noregur</option>
@@ -66,12 +77,15 @@
 
                         <div class="my-3">
                             <div class="form-check">
-                                <input id="payAtPickUp" name="paymentMethod" type="radio" class="form-check-input"
-                                       checked required>
+                                <input name="payAtPickUp" id="payAtPickUp" name="paymentMethod"
+                                       type="radio" class="form-check-input" checked required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast veldu borgunaraðferð')">
                                 <label class="form-check-label" for="credit">Borga við afhendingu</label>
                             </div>
                             <div class="form-check">
-                                <input id="card" name="paymentMethod" type="radio" class="form-check-input" required>
+                                <input name="paymentMethod" id="card" name="paymentMethod"
+                                       type="radio" class="form-check-input" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast veldu borgunaraðferð')">
                                 <label class="form-check-label" for="paypal">Borga með korti</label>
                             </div>
                         </div>
@@ -79,7 +93,9 @@
                         <div class="row gy-3">
                             <div class="col-md-6">
                                 <label for="cc-name" class="form-label">Nafn korthafa</label>
-                                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                <input name="cc-name" type="text" class="form-control"
+                                       id="cc-name" placeholder="" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast settu inn nafn korthafa')">
                                 <small class="text-body-secondary">Fullt nafn eins og á kortinu</small>
                                 <div class="invalid-feedback">
                                     Þarft að slá inn nafn korthafa.
@@ -88,7 +104,9 @@
 
                             <div class="col-md-6">
                                 <label for="cc-number" class="form-label">Kortanúmer</label>
-                                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                <input name="cc-number" type="text" class="form-control"
+                                       id="cc-number" placeholder="" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast settu inn kortanúmer')">
                                 <div class="invalid-feedback">
                                     Þarft að slá inn kortanúmer.
                                 </div>
@@ -96,7 +114,9 @@
 
                             <div class="col-md-3">
                                 <label for="cc-expiration" class="form-label">Gildistími</label>
-                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                <input name="cc-expiration" type="text" class="form-control"
+                                       id="cc-expiration" placeholder="" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast settu inn gildistímann')">
                                 <div class="invalid-feedback">
                                     Þarft að slá inn gildistíma.
                                 </div>
@@ -104,19 +124,17 @@
 
                             <div class="col-md-3">
                                 <label for="cc-cvv" class="form-label">CVV</label>
-                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                <input name="cc-cvv" type="text" class="form-control"
+                                       id="cc-cvv" placeholder="" required=""
+                                        oninvalid="this.setCustomValidity('Vinsamlegast settu inn CVV')">
                                 <div class="invalid-feedback">
                                     Þarf að slá inn CVV.
                                 </div>
                             </div>
                         </div>
-
+                        </form>
                         <hr class="my-4">
-                        <div class="confirmation-button">
-                            <a class="confirmation-button" href="{% url 'confirmation-index' %}"><p class="pay">Greiða
-                                pöntun</p></a>
-                        </div>
-                </form>
+                            <input class="confirmation-button" type="submit" value="Greiða pöntun">
             </div>
         </div>
     </main>

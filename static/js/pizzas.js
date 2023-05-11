@@ -71,12 +71,19 @@ const orderMenuByName = (filter) => {
 }
 
 const orderMenuByPrice = (filter) => {
+    console.log("hallo")
     const pizzas = document.getElementById("pizzas_id").children
 
     let elements = [];
     for (let i = 0; i < pizzas.length; i++) {
         let price = pizzas[i].children[0].children[0].children[1].children[0].children[2].innerHTML
-        price = Number(price.split(" ")[0])
+        console.log(price)
+        //price = Number(price.split(" ")[0])
+        console.log(price)
+        price = Number(price
+            .replace('Verð:', '')
+            .replace('kr.', ''))
+        console.log(price)
         elements.push([price, pizzas[i]])
     }
 

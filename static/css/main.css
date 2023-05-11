@@ -1,10 +1,15 @@
+
+:root {
+    --primary-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .cart_nav {
     display: flex;
     width: 50px;
     height: 50px;
     margin-left: 50px;
-    margin-right: 10px;
-    margin-bottom: 20px;
+    margin-right: auto;
+    margin-bottom: auto;
     mix-blend-mode: multiply;
 }
 
@@ -22,9 +27,66 @@
 .navbar-brand:hover {
     border-bottom: 2px grey solid;
 }
+
 .nav_link:hover {
     border-bottom: 2px grey solid;
 }
+
 .nav_item:hover {
     border-bottom: 2px grey solid;
+}
+
+.navbar {
+    background: darkred;
+}
+
+.navbar-expand-lg {
+    background: darkred;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.profile_nav {
+    border-radius: 50%;
+    mix-blend-mode: normal;
+}
+
+.nav-link {
+    font-family: var(--primary-font);
+    color: white;
+}
+
+.cart_nav {
+    display: inline-block;
+    mix-blend-mode: normal;
+}
+
+.cart {
+    font-family: var(--primary-font);
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+
+.cartContainer {
+    width: fit-content;
+    height: 80px;
+    display: block;
+}
+
+
+.orderCounter {
+    position: fixed;
+    border-radius: 50%;
+    padding: 5px;
+    background: white;
+    border: 3px solid white;
+    color: black;
+    text-align: center;
+    text-decoration-color: white;
+    font: 15px Arial, sans-serif;
+    margin-left: 67px;
 }

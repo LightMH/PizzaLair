@@ -1,26 +1,70 @@
-.signInHeader {
+
+.userHeader {
     color: darkred;
-    font-family: "Book Antiqua";
     font-size: xx-large;
+    margin: 10px;
+    text-align: center;
 }
-.signInBtn {
-    width: 200px;
+
+.font-css {
+    font-family: var(--primary-font);
+}
+
+
+.userBtn {
+    width: 150px;
     height: fit-content;
     border-radius: 20px;
     border-color: darkred;
-    font-family: "Book Antiqua";
+    margin: 10px;
+    background: darkred;
+    color: white;
 }
 
 .form-floating {
     margin-top: 20px;
 }
 
-.signUpBtn {
-    width: 200px;
-    float: right;
-    height: fit-content;
-    border-radius: 20px;
-    border-color: darkred;
-    font-family: "Book Antiqua";
+
+.username {
+    color: darkred;
+    margin: 10px;
 }
 
+.pw {
+    margin: 20px;
+    width: 75px;
+    color: darkred;
+}
+
+.phoneNr {
+    margin: 10px;
+    width: 99px;
+    color: darkred;
+}
+
+.profileImg {
+    margin: 10px;
+    color: darkred;
+    width: 80px;
+}
+
+.createAccount {
+    justify-content: center;
+    color: darkred;
+    font-family: var(--primary-font);
+}
+
+.form-group-acc {
+    width: 40%;
+    margin: 20px;
+}
+
+.form-image-upload {
+    width: 40%;
+}
+
+.profilePic {
+    max-width: 300px;
+    max-height: 600px;
+}

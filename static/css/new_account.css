@@ -1,13 +1,13 @@
 .createAccount {
     justify-content: center;
-    color: crimson;
-    font-family: "Book Antiqua";
+    color: darkred;
+    font-family: var(--primary-font);
 }
 
 .form-group {
-    width: 60%;
+    width: 40%;
 }
 
 .form-image-upload {
-    width: 60%;
+    width: 40%;
 }
