@@ -16,7 +16,6 @@ class ContactCreateForm(ModelForm):
             'full name': widgets.TextInput(attrs={'class': 'form-control'}),
             'street name': widgets.TextInput(attrs={'class': 'form-control'}),
             'house number': widgets.NumberInput(attrs={'class': 'form-control'}),
-
             'city': widgets.TextInput(attrs={'class': 'form-control'}),
             'postal code': widgets.TextInput(attrs={'class': 'form-control'}),
             "country": widgets.Select(attrs={'class': 'form-control dropDown'},
