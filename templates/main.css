@@ -10,3 +10,12 @@
 .hidden {
     opacity: 0.1;
 }
+
+.navbar {
+    position: fixed;
+}
+
+
+.navbar-expand-lg {
+    position: fixed;
+}
