@@ -8,7 +8,6 @@ function onLoadC() {
     let totalPrice = 0
     let pizzaPrices = 0
 
-    // console.log(cartItems)
     if (products) {
 
         console.log(cartItems)
@@ -17,7 +16,6 @@ function onLoadC() {
     for (let i = 0; i < products.length; i++) {
         console.log(cartItems[i])
         if (cartItems[i]) {
-            // if(cartItems[i].ID >500 ) { console.log("above 1000"); onLoadO(cartItems[i],i) }
             console.log(cartItems[i].ID)
             console.log(cartItems[i].Name)
             console.log(cartItems[i].Price)
@@ -26,7 +24,6 @@ function onLoadC() {
             const tr = document.createElement('tr')
             const tdName = document.createElement('td')
             const tdPrice = document.createElement('td')
-            // tdPrice.className = "quant"
             const tdTotal = document.createElement('td')
             tdTotal.id = "quant"
             tdName.id = cartItems[i].ID
@@ -46,22 +43,15 @@ function onLoadC() {
             console.log(totalPrice)
         }
     }
-
-    let values = document.getElementById('quant').innerHTML;
-    console.log(values)
-
-
     document.querySelector('.magn span').textContent = items;
     document.querySelector('.totalprice span').textContent = totalPrice;
 
 }
 
 
-function onLoadO(offer,i) { 
+function onLoadO() { 
     let string = ""
     let totalPrice = 0
-    
-    // let index = offer.ID
     let products = localStorage.getItem('productsInCart');
     let offersID = localStorage.getItem('Offers');
     let items = localStorage.getItem('cartNumbers')
@@ -70,28 +60,6 @@ function onLoadO(offer,i) {
     for (let i = 0; i < 600; i++) {
         if(cartItems[i]){
             if(cartItems[i].ID >500 ) { console.log("Offer ID --",cartItems[i])
-    
-    // if(products.length == null) {
-    //     let product_lenght = 1
-    //     console.log(cartItems)
-        
-    // }else {
-    //     product_lenght = products.length
-    // }
-    // for (let i=0; i < product_lenght; i++) {
-    //     console.log(cartItems)
-        
-        // let cartOfferItems1 = 1 - 15626
-        // let cartOfferItems2 = 5626
-
-    // if(offer) {
-    //     console.log(offer.ID)
-    //     console.log(offer.Name)
-    //     console.log(offer.Price)
-    //     console.log(offer.OfferName)
-    // }
-
-    
 
 
     let tdOffer = document.createElement('td')
@@ -100,19 +68,9 @@ function onLoadO(offer,i) {
     let offersName = localStorage.getItem('Offer Name')
     let tdPrice = document.createElement('td')
     tdPrice.id = "Oprice"
-    // console.log(offersName)
-    // console.log(products.length)
-    // products = JSON.parse(products);
-    // console.log(products[index].length)
-    // console.log(index)
-    // console.log("Parsed",products)
-    // console.log("Parsed check id",products[index].ID)
-    // console.log("Parsed check name",products[index].Name)
-    // console.log("Parsed check price",products[index].Price)
     
     let checkID = document.getElementById('tableOffer');
     let tdName = document.createElement('td')
-    // console.log(cartItems)
     checkID.appendChild(tr)
     
     
@@ -124,25 +82,19 @@ function onLoadO(offer,i) {
     tdOffer.innerText = cartItems[i].OfferName
     tdName.innerText = cartItems[i].Name
     tdPrice.innerText = cartItems[i].Price
-    // tdOffer.innerText = cartItems.OfferName
-    // tdName.innerText = cartItems.Name
-    // tdPrice.innerText = cartItems.Price
+   
 }
 }
 }
     let pizzPrice = document.getElementById('total').innerText;
-    // console.log('C Price',pizzPrice)
     let offPrice = document.getElementById('Oprice').innerText;
-    // console.log('O Price',offPrice)
     pizzPrice = parseInt(pizzPrice)
     offPrice = parseInt(offPrice)
     let TPrice = pizzPrice +  offPrice
 
     console.log('T Price',TPrice)
-    // totalPrice = pizzPrice + cartItems[i].Price
     document.querySelector('.totalprice span').textContent = TPrice;
     document.querySelector('.magn span').textContent = items;
-    // document.querySelector('.totalprice span').textContent = totalPrice;
 
 }
 
