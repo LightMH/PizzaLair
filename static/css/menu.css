@@ -92,6 +92,16 @@ h2 {
     color: darkred;
 }
 
+.pizzaImg {
+    width: 350px;
+    text-decoration: none;
+    color: black;
+}
+
+.pizzaImg:hover {
+    opacity: 0.8;
+}
+
 .grid-container {
     margin-left: 8%;
 }

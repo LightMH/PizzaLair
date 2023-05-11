@@ -10,9 +10,9 @@ $(document).ready(function () {
                     return `<div class="well pizza">
                                  <a href="/menu/${d.id}">
                                  <img class="pizzaImg" src="${d.image}" alt="pizzaImg">
+                                 </a>
                                  <h4>${d.name}</h4>
                                  <p>${d.description}</p>
-                                </a>
                             </div>`
                 });
                 $('.pizzas').html(newHtml.join(''));
