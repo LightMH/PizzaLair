@@ -9,9 +9,17 @@ class CustomerAccount(models.Model):
     user = models.OneToOneField(AuthUser, on_delete=models.CASCADE)
     username = models.CharField(max_length=255, blank=True)
     phone_number = models.CharField(max_length=8, blank=True)
-    profile_image = models.CharField(max_length=9999, blank=True,
-                                     default="https://i.imgur.com/cN6jBlk.png")
+    profile_image = models.CharField(max_length=9999, blank=True) 
     admin = models.BooleanField(blank=True)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.profile_image = self.get_profile_image()
+
+    def get_profile_image(self):
+        if self.profile_image is None or self.profile_image == "":
+            return "https://i.imgur.com/cN6jBlk.png"
+        return self.profile_image
 
 
 class ContactInformation(models.Model):

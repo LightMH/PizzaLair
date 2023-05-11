@@ -4,10 +4,10 @@
     <h4 class="contactHeader">Tengiliðsupplýsingar</h4>
     <form class="form form-horizontal" action="{% url 'contact_information' %}" method="post">
         {% csrf_token %}
-        <div class="form-group" id="fullName" aria-required="true">
-            <label class="fullName" for="{{ form.id_full_name }}">Fullt nafn:</label>
+        <div class="form-group" id="fullName" >
+            <label class="fullName"   for="{{ form.id_full_name }}">Fullt nafn:</label>
             {{ form.full_name }}
-        </div>
+        </div> 
 
         <div class="form-group" id="streetName">
             <label class="streetName" for="{{ form.id_street_name }}">Götuheiti:</label>
@@ -22,7 +22,7 @@
         <div class="form-group" id="city">
             <label class="city" for="{{ form.id_city }}">Borg:</label>
             {{ form.city }}
-        </div>
+        </div>  
 
         <div class="form-group" id="country">
             <label class="country" for="{{ form.id_county }}">Veldu land:</label>
@@ -40,4 +40,5 @@
         <button id="goingBack" class="goingBack">Tilbaka</button>
     </a>
     <script src="/static/js/contact_information.js"></script>
+
 {% endblock %}

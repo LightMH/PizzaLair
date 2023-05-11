@@ -23,17 +23,18 @@
                 </ul>
 
                 <div class="cartContainer">
-                <a class="nav-item">
-                    <form action="populateCart">
-                        <a class="cart" href="{% url 'cart-index' %}"><span class="orderCounter">0</span><img
-                                class="cart_nav" src={% static "images/cart_nytt.gif" %}></a>
-                    </form>
-                </a>
+                    <a class="nav-item">
+                        <form action="populateCart">
+                            <a class="cart" href="{% url 'cart-index' %}"><span class="orderCounter">0</span><img
+                                    class="cart_nav" src={% static "images/cart_nytt.gif" %}></a>
+                        </form>
+                    </a>
                 </div>
                 {% if user.is_authenticated %}
                     <a class="nav-item">
-                        <a class="nav-link" href="{% url 'user-profile' %}"><img class="profile_nav"
-                                                                                 src={{ user.customeraccount.profile_image }}>{{ user.customeraccount.username }}
+                        <a class="nav-link usernameNav" href="{% url 'user-profile' %}"><img class="profile_nav"
+                                                                                             src={{ user.customeraccount.profile_image }}>
+                            {{ user.customeraccount.username }}
                         </a>
                     </a>
                 {% else %}

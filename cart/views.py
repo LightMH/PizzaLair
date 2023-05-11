@@ -1,9 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
 
 from cart.forms.contact_info_form import ContactCreateForm
 from cart.forms.payment_form import PaymentForm
+from django.http import HttpResponse
+
+
+from cart.forms.contact_info_form import ContactCreateForm
 
 
 # Create your views here.
@@ -45,5 +48,5 @@ def contact_information(request):
     else:
         form = ContactCreateForm()
     return render(request, 'cart/contact_information.html', {
-        'form': form
-    })
+        'form': form})
+
