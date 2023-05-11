@@ -1,8 +1,19 @@
 <link rel="stylesheet" href="/static/css/home.css">
 
 {% extends 'base.html' %}
-    {% block content %}
-        <div class="Background ">
-            <img class="img_size" src="/static/images/PizzaLair_front_page.png" alt="Front page image">
+{% block content %}
+    <div class="homeContainer ">
+        <img class="eldeyImg" src="/static/images/PizzaLair_front_page.png" alt="Front page image">
+        <div class="eldeyDescription">
+            <h2 class="homeHeader">Velkomin á Eldey!</h2>
+            <p>Á Eldey bökum við ekta ítalskar pizzur.</p>
+
+            <p>Við búum til okkar eigin súrdeigsbotna og
+                eldbökum allar pizzur við 500°c. </p>
+
+            <p>Matseðillinn er innblásinn af einfaldri ítalskri matargerð eins og hún
+                gerist best.</p>
+            <p>Verði ykkur að góðu!</p>
         </div>
-    {% endblock %}
+    </div>
+{% endblock %}
