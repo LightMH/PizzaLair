@@ -4,7 +4,7 @@
     <h4 class="contactHeader">Tengiliðsupplýsingar</h4>
     <form class="form form-horizontal" action="{% url 'contact_information' %}" method="post">
         {% csrf_token %}
-        <div class="form-group" id="fullName">
+        <div class="form-group" id="fullName" aria-required="true">
             <label class="fullName" for="{{ form.id_full_name }}">Fullt nafn:</label>
             {{ form.full_name }}
         </div>
@@ -33,7 +33,11 @@
             <label class="postalCode" for="{{ form.id_postal_code }}">Póstnúmer:</label>
             {{ form.postal_code }}
         </div>
-        <input onclick="saveContactInformation()" id="continueToPaymentBtn" type="submit" value="Halda áfram í greiðslu" class="continueBtn" style="clear:both; margin: 10px 0" />
+        <input onclick="saveContactInformation()" id="continueToPaymentBtn" type="submit" value="Halda áfram í greiðslu"
+               class="continueBtn" style="clear:both; margin: 10px 0"/>
     </form>
-     <script  src="/static/js/contact_information.js"></script>
+    <a href="{% url 'cart-index' %}">
+        <button id="goingBack" class="goingBack">Tilbaka</button>
+    </a>
+    <script src="/static/js/contact_information.js"></script>
 {% endblock %}

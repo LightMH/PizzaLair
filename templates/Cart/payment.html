@@ -1,4 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h4>Greiðsla</h4>
+    <div class="paymentHeading">
+        <h4>Greiðsla</h4>
+    </div>
+    {% for field in form %}
+        {% csrf_token %}
+        <div class="paymentInfo">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+    {% endfor %}
+    <a href="{% url 'final-index' %}">
+        <button id="finalBtn" class="finalBtn" type="submit">Klára pöntun</button>
+    </a>
+    <a href="{% url 'contact_information' %}">
+        <button id="goingBack" class="goingBack">Tilbaka</button>
+    </a>
 {% endblock %}
