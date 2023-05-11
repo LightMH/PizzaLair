@@ -9,7 +9,6 @@ let remove = document.querySelector('.remove-btn');
 
 
 
-
 function onLoadCartNumbers() { // sækja magn af hlutum i localStorage fyrri körfu
 
     let productNumbers = localStorage.getItem('cartNumbers');
@@ -26,7 +25,6 @@ function onLoadC() {
     let totalPrice = 0
     let pizzaPrices = 0
     
-    // console.log(cartItems)
     if(products.length == null) {
         let product_lenght = 1
         console.log(cartItems)
@@ -48,7 +46,6 @@ function onLoadC() {
             const tr = document.createElement('tr')
             const tdName = document.createElement('td')
             const tdPrice = document.createElement('td')
-            // tdPrice.className = "quant"
             tdRemoveButton.className = 'remove-btn'
             tdAddButton.className = 'add-btn'
             tdRemoveButton.id = cartItems[i].ID
@@ -79,10 +76,7 @@ function onLoadC() {
         }
     }
     
-    // let values = document.getElementById('quant').innerHTML;
-    // console.log(values)
-    
-
+   
     
     document.querySelector('.magn span').textContent = items;
     document.querySelector('.totalprice span').textContent = totalPrice;
@@ -90,30 +84,16 @@ function onLoadC() {
 }
 
 
-
 function onLoadO(offer,i) { 
     let string = ""
     let totalPrice = 0
     
-    // let index = offer.ID
+   
     let products = localStorage.getItem('productsInCart');
     let offersID = localStorage.getItem('Offers');
     let items = localStorage.getItem('cartNumbers')
     let cartItems = JSON.parse(products);
     
-    
-    // if(products.length == null) {
-    //     let product_lenght = 1
-    //     console.log(cartItems)
-        
-    // }else {
-    //     product_lenght = products.length
-    // }
-    // for (let i=0; i < product_lenght; i++) {
-    //     console.log(cartItems)
-        
-        // let cartOfferItems1 = 1 - 15626
-        // let cartOfferItems2 = 5626
 
     if(offer) {
         console.log(offer.ID)
@@ -130,19 +110,12 @@ function onLoadO(offer,i) {
     let pizzaPrices = 0
     let offersName = localStorage.getItem('Offer Name')
     let tdPrice = document.createElement('td')
-    // console.log(offersName)
-    // console.log(products.length)
+ 
     products = JSON.parse(products);
-    // console.log(products[index].length)
-    // console.log(index)
-    // console.log("Parsed",products)
-    // console.log("Parsed check id",products[index].ID)
-    // console.log("Parsed check name",products[index].Name)
-    // console.log("Parsed check price",products[index].Price)
+
     
     let checkID = document.getElementById('tableOffer');
     let tdName = document.createElement('td')
-    // console.log(cartItems)
     checkID.appendChild(tr)
     
     
