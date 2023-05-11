@@ -6,23 +6,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/css/offers.css">
   </head>
   <body>
  
  <main>
+  </head>
+  <body>
+ 
+ <main>
     <div class="descriptionContainer">
-        <H2 class="OfferName">{{ offer.name }}</H2>
-        <div class="offerInfo">
-            <h3 class="offerDescription">{{ offer.description }}</h3>
+        <H2 class="OfferName" id="offer.name">{{ offer.name }}</H2>
+        <div class="offerInfo"> <a id="offer.id">{{ offer.id }}</a>
+            <h3 class="offerDescription" id="offerDescription">{{ offer.description }}</h3>
             <img src="/static/images/Offer_img.png" alt="Offer Image" class="singleOfferImg" id="singleOfferImg">
             <div class="pizzasInOffer">
                 {% for number in offer.range_of_pizzas %}
-                    <label for="pizza1" class="form-label">Pizza {{ number }}</label>
-                    <select class="form-select" id="price" onchange="getOption()" required>
-                        <option >Velja...</option>
+                    <label for="pizza1" class="form-label" id="drop-">Pizza {{ number }}</label>
+                    <select class="form-select" id="select-{{ number }}" required>
+                    <!-- <select class="form-select" id="select" required> -->
+
+                        <option></option>
                         {% for pizza in pizzas %}
-                            <option>{{ pizza.name }} <p id="price">{{ pizza.price }} kr</p></option>
+                            <option id="pizza.name">{{ pizza.name }} <p id="price">{{ pizza.price }}kr</p></option>
                             
                         {% endfor %}
                     </select>
@@ -31,9 +43,17 @@
                     Vinsamlegast veldu pizzur í tilboðið.
                 </div>
             </div>
-            <button class="addToCartBtn" type="submit" value="Submit">Bæta í körfu</button>
+            <button class="add-cart addToCartBtn" id="{{ offer }} {{ pizza }}" type="submit" value="Submit" >Bæta í körfu</button>
         </div>
     </div>
+
+
+ </main>
+ 
+ <script src="/static/js/offer.js"></script>
+ 
+  </body>
+</html>
 
 
  </main>

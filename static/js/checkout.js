@@ -19,6 +19,7 @@ valprice = parseFloat(valprice);
 let products = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
     {
         ID: valp,
+       
         Name: valname,
         Price: valprice,
         inCart: 0
@@ -69,9 +70,7 @@ function onLoadCartNumbers() { // sækja magn af hlutum i localStorage fyrri kö
 function cartNumbers(product) {  // fara i gegnum localStorage og bæta við 1 ef bætt er i körfu pizzu
     
     let productNumbers = localStorage.getItem('cartNumbers');
-
     productNumbers = parseInt(productNumbers);
-    
     if(productNumbers) {
         localStorage.setItem('cartNumbers', productNumbers + 1);
         document.querySelector('.cart span').textContent = productNumbers + 1;
