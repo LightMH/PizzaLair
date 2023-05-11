@@ -1,0 +1,21 @@
+.contactHeader {
+    color: darkred;
+    margin-left: 20px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.form-control {
+    width: 500px;
+}
+
+.continueBtn {
+    margin-left: 20px;
+    background-color: crimson;
+    color: white;
+    border-radius: 20px;
+}

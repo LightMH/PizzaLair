@@ -27,6 +27,10 @@
     width: 300px;
 }
 
+.id_hidden {
+    display: none;
+}
+
 #singleOfferImg {
     width: 250px;
     height: 200px;
@@ -36,7 +40,9 @@
 .form-select {
     width: 40%;
 }
-
+#price{
+    display: none;
+}
 .OfferName {
     font-weight: bold;
     color: darkred;

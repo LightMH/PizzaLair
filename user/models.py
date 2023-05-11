@@ -24,7 +24,8 @@ class CustomerAccount(models.Model):
 
 class ContactInformation(models.Model):
     full_name = models.CharField(max_length=255, blank=True)
-    phone = models.CharField(max_length=20, blank=True)
+    street_name = models.CharField(max_length=20, blank=True)
+    house_number = models.CharField(max_length=20, blank=True)
     city = models.CharField(max_length=255, blank=True)
     country = models.CharField(max_length=255, blank=True)
     postal_code = models.CharField(max_length=20, blank=True)
