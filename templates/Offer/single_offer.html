@@ -1,49 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
-
+   
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/static/css/offers.css">
-    </head>
-    <body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/offers.css">
+  </head>
+  <body>
+ 
+ <main>
+    <div class="descriptionContainer">
+        <H2 class="OfferName" id="offer.name">{{ offer.name }}</H2>
+        <div class="offerInfo"> <a id="offer.id">{{ offer.id }}</a>
+            <h3 class="offerDescription" id="offerDescription">{{ offer.description }}</h3>
+            <img src="/static/images/Offer_img.png" alt="Offer Image" class="singleOfferImg" id="singleOfferImg">
+            <div class="pizzasInOffer">
+                {% for number in offer.range_of_pizzas %}
+                    <label for="pizza1" class="form-label" id="drop-">Pizza {{ number }}</label>
+                    <select class="form-select" id="select-{{ number }}" required>
+                    <!-- <select class="form-select" id="select" required> -->
 
-    <main>
-        <div class="descriptionContainer">
-            <H2 class="OfferName" id="offer.name">{{ offer.name }}</H2>
-            <div class="offerInfo"><a id="offer.id">{{ offer.id }}</a>
-                <h3 class="offerDescription" id="offerDescription">{{ offer.description }}</h3>
-                <img src="/static/images/Offer_img.png" alt="Offer Image" class="singleOfferImg" id="singleOfferImg">
-                <div class="pizzasInOffer">
-                    {% for number in offer.range_of_pizzas %}
-                        <label for="pizza1" class="form-label" id="drop-">Pizza {{ number }}</label>
-                        <select class="form-select" id="select-{{ number }}" required>
-                            <!-- <select class="form-select" id="select" required> -->
-                            <option></option>
-                            {% for pizza in pizzas %}
-                                <option id="pizza.name">{{ pizza.name }} <p id="price">{{ pizza.price }} kr</p>
-                                    <p id="pizza.id"> {{ pizza.id }} </p></option>
-
-                            {% endfor %}
-                        </select>
-                    {% endfor %}
-                    <div class="invalid-feedback">
-                        Vinsamlegast veldu pizzur í tilboðið.
-                    </div>
+                        <option></option>
+                        {% for pizza in pizzas %}
+                            <option id="pizza.name">{{ pizza.name }} <p id="price">{{ pizza.price }}kr</p></option>
+                            
+                        {% endfor %}
+                    </select>
+                {% endfor %}
+                <div class="invalid-feedback">
+                    Vinsamlegast veldu pizzur í tilboðið.
                 </div>
-                <button class="offer-add-cart addToCartBtn" id="{{ offer }}" type="submit" value="Submit">Bæta í körfu
-                </button>
             </div>
+            <button class="add-cart addToCartBtn" id="{{ offer }} {{ pizza }}" type="submit" value="Submit" >Bæta í körfu</button>
         </div>
+    </div>
 
 
-    </main>
-
-    <script src="/static/js/offer.js"></script>
-
-    </body>
-    </html>
+ </main>
+ 
+ <script src="/static/js/offer.js"></script>
+ 
+  </body>
+</html>
 
 {% endblock %}
