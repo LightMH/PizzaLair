@@ -92,6 +92,9 @@ function onLoadO(offer,i) {
     let products = localStorage.getItem('productsInCart');
     let offersID = localStorage.getItem('Offers');
     let items = localStorage.getItem('cartNumbers')
+
+    let PITEMS = document.getElementById('itemsquantity').innerText
+    console.log("IIIIIII---->",PITEMS)
     let cartItems = JSON.parse(products);
     
 
