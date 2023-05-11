@@ -1,26 +1,26 @@
+
 .homeContainer {
-    margin-left: 160px;
-    margin-top: 10px;
-    width: 100%;
-    height: 100%;
+    display: flex;
 }
 
-.container h1 {
-    margin-left: 410px;
-    font-family: var(--primary-font);
-    color: darkred;
-}
-
-.Background {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-
-}
-
-.img_size {
+.eldeyImg {
     background-image: url("static/images/PizzaLair_front_page.png");
     background-size: 100%;
-    width: 100%;
+    width: 60%;
     height: 800px;
+}
+
+.homeHeader {
+    color: darkred;
+    font-size: xx-large;
+    margin: 10px;
+    text-align: center;
+}
+
+.eldeyDescription {
+    font-family: var(--primary-font);
+    font-size: x-large;
+    float: right;
+    font-weight: lighter;
+    width: 300px;
 }

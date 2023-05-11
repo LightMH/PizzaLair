@@ -82,9 +82,8 @@
     position: fixed;
     border-radius: 50%;
     padding: 5px;
-    background: white;
     border: 3px solid white;
-    color: black;
+    color: white;
     text-align: center;
     text-decoration-color: white;
     font: 15px Arial, sans-serif;
