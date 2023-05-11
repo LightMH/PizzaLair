@@ -161,14 +161,14 @@ function onLoadO(offer,i) {
 function empty() {
     //empty cart, refresh siðu 
     console.log("empty")
-    if(localStorage.getItem('productsInCart'),localStorage.getItem('cartNumbers'),localStorage.getItem('offerCount')){
+    localStorage.getItem('productsInCart'),localStorage.getItem('cartNumbers'),localStorage.getItem('offerCount')
         localStorage.removeItem('productsInCart');
         localStorage.removeItem('cartNumbers');
         localStorage.removeItem('offerCount');
         
         location.reload()
       
-      }
+      
     
 }
 
