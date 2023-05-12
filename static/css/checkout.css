@@ -84,3 +84,13 @@ main {
     color: white;
     margin-left: 20px;
 }
+
+#id_expiry_month{
+    width: 40px;
+}
+
+#id_expiry_year{
+    width: 40px;
+}
+
+
