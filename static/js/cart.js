@@ -1,4 +1,4 @@
-console.log("Cart js ir running")
+
 let removeCarts = document.querySelectorAll('.remove-btn'); // sja til
 let addCarts = document.querySelectorAll('.add-btn'); // sja til
 const emptyCart = document.getElementById("emptycart");
@@ -27,19 +27,15 @@ function onLoadC() {
     
     if(products.length == null) {
         let product_lenght = 1
-        console.log(cartItems)
         
     }else {
         product_lenght = products.length
     }
     for (let i=0; i < 600; i++) {
-        console.log(cartItems[i])
+
         if(cartItems[i]) {
-            if(cartItems[i].ID >=500 ) { console.log("above 1000"); onLoadO(cartItems[i],i) }
-            console.log(cartItems[i].ID)
-            console.log(cartItems[i].Name)
-            console.log(cartItems[i].Price)
-            console.log(cartItems[i].inCart)
+            if(cartItems[i].ID >=500 ) {  onLoadO(cartItems[i],i) }
+           
             const span = document.createElement('span')
             const tdRemoveButton = document.createElement('button')
             const tdAddButton = document.createElement('button')
@@ -69,10 +65,8 @@ function onLoadC() {
             tdAddButton.innerText = "+"
             tdRemoveButton.innerText = "-"
 
-
             totalPrice += cartItems[i].Price * cartItems[i].inCart
 
-            console.log(totalPrice)
         }
     }
     
@@ -94,17 +88,8 @@ function onLoadO(offer,i) {
     let items = localStorage.getItem('cartNumbers')
 
     let PITEMS = document.getElementById('itemsquantity').innerText
-    console.log("IIIIIII---->",PITEMS)
+
     let cartItems = JSON.parse(products);
-    
-
-    if(offer) {
-        console.log(offer.ID)
-        console.log(offer.Name)
-        console.log(offer.Price)
-        console.log(offer.OfferName)
-    }
-
     
 
 
@@ -130,9 +115,7 @@ function onLoadO(offer,i) {
     tdOffer.innerText = offer.OfferName
     tdName.innerText = offer.Name
     tdPrice.innerText = offer.Price}
-    // document.querySelector('.totalprice span').textContent = totalPrice;
     document.querySelector('.magn span').textContent = items;
-    // document.querySelector('.totalprice span').textContent = totalPrice;
 
 }
 function empty() {
@@ -152,15 +135,14 @@ function empty() {
 
 function removePizza(button) {
     console.log("remove 1 pizza");
-    console.log(button.id);
+    
     let cartItems = localStorage.getItem('productsInCart'); // sækja Id ..
     let cartNum = localStorage.getItem('cartNumbers'); // sækja Id ..
     cartNum = JSON.parse(cartNum);
     cartItems = JSON.parse(cartItems);
     
-    console.log(cartItems)
-    console.log(cartItems[button.id].inCart)
-    console.log
+
+    
     if(cartItems[button.id].inCart == 1) {
         delete cartItems[button.id]
     } else {
@@ -172,7 +154,7 @@ function removePizza(button) {
 }
 function addPizza(button) {
     console.log("add 1 pizza")
-    console.log(button.id)
+    
     let cartItems = localStorage.getItem('productsInCart'); // sækja Id ..
     let cartNum = localStorage.getItem('cartNumbers'); // sækja Id ..
     cartNum = JSON.parse(cartNum);

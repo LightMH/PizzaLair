@@ -43,19 +43,18 @@ for (let i=0; i < carts.length; i++) {
 
     carts[i].addEventListener('click', () => { // bæta i körfu takki
         
-        console.log("Added to cart");
-        console.log(product)
+       
+        
         product[i].Name = testp
         let cIndex = i
-        console.log(product)
+        
         let savePrice = 0
         let counter = 0
         for (let i = 0; i < values.length; i++) {
                 let PriceOffer_2_1 = 0 
                 let val = i+1
                 let add = '#select-'+val+'.form-select'
-                console.log('Values test', $(add).val());
-                
+               
                 let __pName = $(add).val();
                 let __pName_sliced = __pName.slice(0,-6)
                 let __Price_sliced = __pName.slice(__pName.length- 6,- 2)
@@ -64,26 +63,23 @@ for (let i=0; i < carts.length; i++) {
                 if(i==0){savePrice =  __Price; } 
                 if(i==1 && __Price > savePrice) { savePrice = __Price}
 
-                console.log("only name -->",__pName)
-                console.log("only price -->",__Price_sliced)
-                console.log("INT price -->",__Price)
-                console.log("saved price -->",savePrice)
+                
                 pizzas.push(__pName_sliced);  
                 counter += 1  
                 if(!__pName){
-                    console.log("NO Value in drop down",__pName)
+                   
                     return location.reload()
                 }
         }
 
-        console.log(valID)
+        
         if(valID == 501) {
             product[cIndex].Price = savePrice
-            console.log("saved price logged")
+            
         }
 
         product[cIndex].Name = pizzas
-        // product[i].Name = pizzas
+        
       
         cartNumbers(product[i]);
     })
@@ -120,28 +116,24 @@ function cartNumbers(product) {  // fara i gegnum localStorage og bæta við 1 e
     
     let count = localStorage.getItem('offerCount')
 
-    // if(product.ID > 500)
     let cartNum = localStorage.getItem('cartNumbers')
     cartNum = parseInt(cartNum);
     if(count) { 
         let offCount = localStorage.getItem('offerCount');
 
-        // offCount = JSNO
+       
         offCount = parseInt(offCount);
 
         localStorage.setItem('offerCount',offCount + 1);
 
         let counter = localStorage.getItem('offerCount')
         
-        // localStorage.setItem('cartNumbers', cartNum+1)
         
         if(productNumbers) {
-        // localStorage.setItem('cartNumbers', productNumbers  + 1);
         document.querySelector('.cart span').textContent = productNumbers + 1;
             
         }
 
-        // localStorage.setItem('cartNumbers', 1);
         document.querySelector('.cart span').textContent = productNumbers + 1;
    
     
@@ -154,13 +146,11 @@ function cartNumbers(product) {  // fara i gegnum localStorage og bæta við 1 e
         
         if(offerCheck) {
             if(offerCheck.ID > 500){ counter += 1 }
-            // counter += 1 
         } 
      }
 
      reCart(counter)
      setItems(product)
-        // console.log("ASDASDASDSAD --<-<--<-<", offerCheck.length)
      ;}
 
 
