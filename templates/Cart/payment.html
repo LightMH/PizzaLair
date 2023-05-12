@@ -1,20 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
+    <link rel="stylesheet" href="/static/css/checkout.css">
     <div class="paymentHeading">
         <h4>Greiðsla</h4>
     </div>
-    {% for field in form %}
+
+    <form class="form-horizontal" method="post">
         {% csrf_token %}
-        <div class="paymentInfo">
-            {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
+        <div class="form-group" id="choiceField">
+            <label class="choiceField">Veldu greiðsluleið:</label>
+            {{ form.choice_field }}
         </div>
-    {% endfor %}
-    <a href="{% url 'final-index' %}">
-        <button id="finalBtn" class="finalBtn" type="submit">Klára pöntun</button>
-    </a>
-    <a href="{% url 'contact_information' %}">
-        <button id="goingBack" class="goingBack">Tilbaka</button>
+
+        <div class="form-group">
+            <label class="cardName" for="{{ form.card_holder.id_for_label }}">Nafn korthafa:</label>
+            {{ form.card_holder }}
+            {{ form.card_holder.errors }}
+        </div>
+
+        <div class="form-group">
+            <label class="cardNumber" for="{{ form.card_number.id_for_label }}">Kortanúmer:</label>
+            {{ form.card_number }}
+            {{ form.card_number.errors }}
+        </div>
+
+        <div class="form-group">
+            <label class="cvc" for="{{ form.cvc.id_for_label }}">CVC:</label>
+            {{ form.cvc }}
+            {{ form.cvc.errors }}
+        </div>
+
+        <a href='{% url 'confirmation-index' %}'>
+            <button id="finalBtn" class="finalBtn" type="submit">Klára pöntun</button>
+        </a>
+    </form>
+    <a href='{% url 'contact_information' %}'>
+        <button id="goingBack" class="goingBack">Til baka</button>
     </a>
 
 {% endblock %}

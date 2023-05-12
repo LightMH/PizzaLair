@@ -5,7 +5,6 @@ from cart.forms.contact_info_form import ContactCreateForm
 from cart.forms.payment_form import PaymentForm
 from django.http import HttpResponse
 
-
 from cart.forms.contact_info_form import ContactCreateForm
 
 
@@ -17,21 +16,20 @@ def cart_index(request):
 
 
 @login_required
-def checkout_index(request):
-    return render(request, 'cart/checkout_process.html')
-
-
 def confirmation_index(request):
     return render(request, 'cart/confirmation.html')
 
 
+@login_required
 def final_index(request):
     return render(request, 'cart/final-page.html')
 
 
+@login_required
 def payment_index(request):
     if request.method == 'POST':
-        form = PaymentForm(request.POST)
+        form = PaymentForm(data=request.POST)
+        print(form)
         if form.is_valid():
             return redirect('final-index')
     else:
@@ -39,6 +37,7 @@ def payment_index(request):
     return render(request, 'cart/payment.html', {"form": form})
 
 
+@login_required
 def contact_information(request):
     if request.method == 'POST':
         form = ContactCreateForm(data=request.POST)
@@ -49,4 +48,3 @@ def contact_information(request):
         form = ContactCreateForm()
     return render(request, 'cart/contact_information.html', {
         'form': form})
-

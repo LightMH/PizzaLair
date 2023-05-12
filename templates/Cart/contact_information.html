@@ -4,10 +4,10 @@
     <h4 class="contactHeader">Tengiliðsupplýsingar</h4>
     <form class="form form-horizontal" action="{% url 'contact_information' %}" method="post">
         {% csrf_token %}
-        <div class="form-group" id="fullName" >
-            <label class="fullName"   for="{{ form.id_full_name }}">Fullt nafn:</label>
+        <div class="form-group" id="fullName">
+            <label class="fullName" for="{{ form.id_full_name }}">Fullt nafn:</label>
             {{ form.full_name }}
-        </div> 
+        </div>
 
         <div class="form-group" id="streetName">
             <label class="streetName" for="{{ form.id_street_name }}">Götuheiti:</label>
@@ -15,14 +15,14 @@
         </div>
 
         <div class="form-group" id="houseName">
-            <label class="houseNumber" for="{{ form.id_house_number }}">Húsanúmer:</label>
+            <label class="houseNumber" for="{{ form.id_house_number }}">Húsnúmer:</label>
             {{ form.house_number }}
         </div>
 
         <div class="form-group" id="city">
             <label class="city" for="{{ form.id_city }}">Borg:</label>
             {{ form.city }}
-        </div>  
+        </div>
 
         <div class="form-group" id="country">
             <label class="country" for="{{ form.id_county }}">Veldu land:</label>
@@ -34,10 +34,10 @@
             {{ form.postal_code }}
         </div>
         <input onclick="saveContactInformation()" id="continueToPaymentBtn" type="submit" value="Halda áfram í greiðslu"
-               class="continueBtn" style="clear:both; margin: 10px 0"/>
+               class="continueBtn" style="clear:both"/>
     </form>
     <a href="{% url 'cart-index' %}">
-        <button id="goingBack" class="goingBack">Tilbaka</button>
+        <button id="goingBack" class="goingBack">Til baka</button>
     </a>
     <script src="/static/js/contact_information.js"></script>
 
