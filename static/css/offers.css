@@ -40,15 +40,22 @@
 .form-select {
     width: 40%;
 }
-#price{
+
+#price {
     display: none;
 }
-.OfferName {
-    font-weight: bold;
+
+.offerHeader {
     color: darkred;
     text-align: center;
-    border: solid;
+    font-size: xxx-large;
     padding: 5px;
+    font: var(--primary-font)
+}
+
+.offerDescription {
+    font-weight: lighter;
+    font-size: x-large;
 }
 
 .descriptionContainer {
@@ -89,8 +96,8 @@
 
 .addToCartBtn {
     border-radius: 5px;
-    background-color: crimson;
-    border-color: crimson;
+    background-color: darkred;
+    border-color: darkred;
     color: white;
     margin-top: 10px;
 }
