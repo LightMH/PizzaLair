@@ -2,6 +2,19 @@ main {
     margin-left: 150px;
 }
 
+.paymentHeading {
+    color: darkred;
+    font-size: xx-large;
+    margin: 10px;
+    text-align: center;
+}
+
+.paymentInfo {
+    width: 40%;
+    margin: 20px;
+    justify-content: center;
+}
+
 .confirmation-button {
     align-self: center;
     background-color: crimson;
@@ -13,4 +26,40 @@ main {
     border-radius: 20px;
     color: white;
     font-size: x-large;
+}
+
+.finalBtn {
+    width: 200px;
+    height: fit-content;
+    border-radius: 20px;
+    border-color: darkred;
+    background: darkred;
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.goingBack {
+    width: 200px;
+    height: fit-content;
+    border-radius: 20px;
+    border-color: darkred;
+    background: darkred;
+    color: white;
+    margin-left: 20px;
+}
+
+.form-group {
+    margin-left: 20px;
+    margin-bottom: 5px;
+    width: 40%;
+}
+
+.cvc {
+    margin-right: 20px;
+    width: 82px;
+}
+
+.cardNumber {
+    width: 102px;
 }
