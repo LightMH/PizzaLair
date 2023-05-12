@@ -15,7 +15,7 @@ def cart_index(request):
     return render(request, 'cart/cart.html')
 
 
-@login_required
+
 def confirmation_index(request):
     return render(request, 'cart/confirmation.html')
 
@@ -31,7 +31,7 @@ def payment_index(request):
         form = PaymentForm(data=request.POST)
         print(form)
         if form.is_valid():
-            return redirect('final-index')
+            return redirect('confirmation-index')
     else:
         form = PaymentForm()
     return render(request, 'cart/payment.html', {"form": form})

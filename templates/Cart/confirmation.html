@@ -40,11 +40,10 @@
                     <td class="totalprice"><span id="total">0</span> kr</td>
                 </tr>
             </table>
-
-            <a href="{% url 'cart-index' %}">
-                <button class="changeOrderBtn">Breyta pöntun</button>
-            </a>
             <div class="cart-buttons">
+                <a href="{% url 'cart-index' %}">
+                <button class="changeOrderBtn">Breyta pöntun</button>
+                </a>
                 <a class="check_cart" href="{% url 'final-index' %}">
                     <button id="checkout" class="confirmBtn">Staðfesta pöntun</button>
                 </a>

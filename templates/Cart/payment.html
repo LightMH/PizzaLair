@@ -2,15 +2,15 @@
 {% block content %}
     <link rel="stylesheet" href="/static/css/checkout.css">
     <div class="paymentHeading">
-        <h4>Greiðsla</h4>
+        <h3>Greiðsla</h3>
     </div>
+    <h5 class="header">Borga við afhendingu:</h5>
+    <a href='{% url 'confirmation-index' %}'>
+        <button id="continueBtn" class="continueBtn">Klára pöntun</button>
+    </a>
     <form class="form-horizontal" method="post">
         {% csrf_token %}
-        <div class="form-group" id="choiceField">
-            <label class="choiceField">Veldu greiðsluleið:</label>
-            {{ form.choice_field }}
-        </div>
-
+        <h5 class="header">Borga með korti:</h5>
         <div class="form-group">
             <label class="cardName" for="{{ form.card_holder.id_for_label }}">Nafn korthafa:</label>
             {{ form.card_holder }}
@@ -39,5 +39,6 @@
     </div>
     {% load static %}
     <script src="{% static 'js/payment_method.js' %}"></script>
+    <script src="{% static 'js/card_info.js' %}"></script>
 {% endblock %}
 
