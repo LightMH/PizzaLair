@@ -1,7 +1,6 @@
 from django import forms
 
 
-
 class PaymentForm(forms.Form):
     card_holder = forms.CharField(label="Nafn korthafa ", max_length=100, required=True,
                                   error_messages={
@@ -18,3 +17,8 @@ class PaymentForm(forms.Form):
                               'required': "Vinsamlegast fylltu inn CVC"
                           }
                           )
+    expiry_date = forms.CharField(label="CVC ", max_length=5, min_length=5, required=True,
+                                  error_messages={
+                                      'required': "Vinsamlegast settu inn gildistíma"
+                                  }
+                                  )
