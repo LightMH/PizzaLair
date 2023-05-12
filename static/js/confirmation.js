@@ -1,5 +1,9 @@
 console.log("confirmation js running")
 
+let proceed = document.querySelector('.check_cart')
+proceed.addEventListener('click',() => {
+    empty();
+})
 function onLoadC() {
 
     let products = localStorage.getItem('productsInCart');
@@ -97,6 +101,18 @@ function onLoadO() {
     document.querySelector('.magn span').textContent = items;
 
 }
+
+function empty() {
+    //empty cart, refresh siðu
+    console.log("empty")
+    localStorage.getItem('productsInCart'),localStorage.getItem('cartNumbers'),localStorage.getItem('offerCount')
+        localStorage.removeItem('productsInCart');
+        localStorage.removeItem('cartNumbers');
+        localStorage.removeItem('offerCount');
+
+        location.reload()
+}
+
 
 
 onLoadC()
