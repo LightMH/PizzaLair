@@ -14,9 +14,9 @@ function onLoadC() {
 
     if (products) {
 
-        console.log(cartItems)
+        
 
-    }
+    
     for (let i = 0; i < products.length; i++) {
         console.log(cartItems[i])
         if (cartItems[i]) {
@@ -48,7 +48,7 @@ function onLoadC() {
         }
     }
     document.querySelector('.magn span').textContent = items;
-    document.querySelector('.totalprice span').textContent = totalPrice;
+    document.querySelector('.totalprice span').textContent = totalPrice;}
 
 }
 
@@ -60,7 +60,7 @@ function onLoadO() {
     let offersID = localStorage.getItem('Offers');
     let items = localStorage.getItem('cartNumbers')
     let cartItems = JSON.parse(products);
-    
+    if(cartItems){
     for (let i = 0; i < 600; i++) {
         if(cartItems[i]){
             if(cartItems[i].ID >500 ) { console.log("Offer ID --",cartItems[i])
@@ -72,7 +72,8 @@ function onLoadO() {
     let offersName = localStorage.getItem('Offer Name')
     let tdPrice = document.createElement('td')
     tdPrice.id = "Oprice"
-    
+    let tdTotal = document.createElement('td')
+    tdTotal.id = "quant"
     let checkID = document.getElementById('tableOffer');
     let tdName = document.createElement('td')
     checkID.appendChild(tr)
@@ -82,10 +83,11 @@ function onLoadO() {
     tr.append(tdOffer)
     tr.append(tdName)
     tr.appendChild(tdPrice)
-    
+    tr.appendChild(tdTotal)
     tdOffer.innerText = cartItems[i].OfferName
     tdName.innerText = cartItems[i].Name
     tdPrice.innerText = cartItems[i].Price
+    tdTotal.innerText = cartItems[i].inCart
    
 }
 }
@@ -100,7 +102,7 @@ function onLoadO() {
     document.querySelector('.totalprice span').textContent = TPrice;
     document.querySelector('.magn span').textContent = items;
 
-}
+}}
 
 function empty() {
     //empty cart, refresh siðu
