@@ -42,12 +42,14 @@ let product = [ // init list með object af pizza id og inCart til að halda um 
 for (let i=0; i < carts.length; i++) { 
 
     carts[i].addEventListener('click', () => { // bæta i körfu takki
+        
         console.log("Added to cart");
         console.log(product)
         product[i].Name = testp
         let cIndex = i
         console.log(product)
         let savePrice = 0
+        let counter = 0
         for (let i = 0; i < values.length; i++) {
                 let PriceOffer_2_1 = 0 
                 let val = i+1
@@ -66,15 +68,23 @@ for (let i=0; i < carts.length; i++) {
                 console.log("only price -->",__Price_sliced)
                 console.log("INT price -->",__Price)
                 console.log("saved price -->",savePrice)
-                pizzas.push(__pName_sliced);    
+                pizzas.push(__pName_sliced);  
+                counter += 1  
+                if(!__pName){
+                    console.log("NO Value in drop down",__pName)
+                    return location.reload()
+                }
         }
+
         console.log(valID)
         if(valID == 501) {
             product[cIndex].Price = savePrice
             console.log("saved price logged")
         }
+
         product[cIndex].Name = pizzas
         // product[i].Name = pizzas
+      
         cartNumbers(product[i]);
     })
     
