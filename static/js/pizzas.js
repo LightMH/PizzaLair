@@ -28,7 +28,6 @@ $(document).ready(function () {
 
 
 const menuFilter = (filter) => {
-    // const pizzaList = document.querySelectorAll('.card-container')
     const pizzaList = document.getElementById('pizzas_id').children;
 
     for (let i = 0; i < pizzaList.length; i++) {

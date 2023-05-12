@@ -1,4 +1,4 @@
-console.log("confirmation js running")
+
 
 let proceed = document.querySelector('.check_cart')
 proceed.addEventListener('click',() => {
@@ -20,10 +20,7 @@ function onLoadC() {
     for (let i = 0; i < products.length; i++) {
         console.log(cartItems[i])
         if (cartItems[i]) {
-            console.log(cartItems[i].ID)
-            console.log(cartItems[i].Name)
-            console.log(cartItems[i].Price)
-            console.log(cartItems[i].inCart)
+            
             const span = document.createElement('span')
             const tr = document.createElement('tr')
             const tdName = document.createElement('td')
@@ -44,7 +41,7 @@ function onLoadC() {
 
             totalPrice += cartItems[i].Price * cartItems[i].inCart
 
-            console.log(totalPrice)
+           
         }
     }
     document.querySelector('.magn span').textContent = items;
@@ -98,7 +95,7 @@ function onLoadO() {
     offPrice = parseInt(offPrice)
     let TPrice = pizzPrice +  offPrice
 
-    console.log('T Price',TPrice)
+
     document.querySelector('.totalprice span').textContent = TPrice;
     document.querySelector('.magn span').textContent = items;
 
@@ -106,7 +103,7 @@ function onLoadO() {
 
 function empty() {
     //empty cart, refresh siðu
-    console.log("empty")
+    
     localStorage.getItem('productsInCart'),localStorage.getItem('cartNumbers'),localStorage.getItem('offerCount')
         localStorage.removeItem('productsInCart');
         localStorage.removeItem('cartNumbers');

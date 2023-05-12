@@ -6,11 +6,6 @@ continueBtn.addEventListener("click", saveContactInformation)
 
 
 function saveContactInformation() {
-    console.log('hæ')
-
-    // let fullName = document.querySelector('.totalPrice').value
-    // console.log(fullName)
-    // let a = document.getElementsById('fullName').val();
 
     let fullName = document.getElementById('id_full_name').value
     let streetName = document.getElementById('id_street_name').value

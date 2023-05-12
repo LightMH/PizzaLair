@@ -8,12 +8,8 @@ var valname = document.getElementById('pizza.name').innerText;
 var valprice = document.getElementById('pizza.price').innerText ;
 
 valprice = valprice.slice(0,-2)
-// console.log(valp);
-// console.log(valname);
-// console.log(valprice);
-// console.log(typeof valprice);
+
 valprice = parseFloat(valprice);
-// console.log(typeof valprice);
 
 
 let products = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
