@@ -4,7 +4,6 @@
     <div class="paymentHeading">
         <h4>Greiðsla</h4>
     </div>
-
     <form class="form-horizontal" method="post">
         {% csrf_token %}
         <div class="form-group" id="choiceField">
@@ -37,5 +36,8 @@
     <a href='{% url 'contact_information' %}'>
         <button id="goingBack" class="goingBack">Til baka</button>
     </a>
-
+    </div>
+    {% load static %}
+    <script src="{% static 'js/payment_method.js' %}"></script>
 {% endblock %}
+

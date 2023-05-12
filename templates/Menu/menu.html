@@ -14,10 +14,10 @@
         </div>
         <form class="search" role="search">
 
-                    <input class="form-control me-2" type="search" id="search_box" placeholder="Leita eftir nafni..."
-                           aria-label="Leita">
-                    <button class="btn btn-outline-success" type="submit" id="searchBtn">Leita</button>
-                </form>
+            <input class="form-control me-2" type="search" id="search_box" placeholder="Leita eftir nafni..."
+                   aria-label="Leita">
+            <button class="btn btn-outline-success" type="submit" id="searchBtn">Leita</button>
+        </form>
         <div class="filters">
             <div class="menuFilter">
                 <h5 id="filterLabel">Sía matseðil eftir:</h5>
@@ -56,8 +56,7 @@
                         <div class="flex-container">
                             <div class="card-container" data-filter-tag="{{ pizza.pizza.type }}">
                                 <a href='{% url 'id-index' pizza.pizza.id %}'>
-                                    <img class='img-container' src='{{ pizza.pizza.image }}' alt='Menu_image'>
-                                </a>
+                                    <img class='img-container' src='{{ pizza.pizza.image }}' alt='Menu_image'></a>
                                 <div class="card shadow-sm" style="border-radius: 0px">
                                     <div class="card-body">
                                         <h4 class="card-text"><b>{{ pizza.pizza.name }}</b></h4>

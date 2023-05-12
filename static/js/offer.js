@@ -100,7 +100,7 @@ function setItems(product) { // setja ID og inCart sem json til að geyma svo h�
                 [product.ID]: product,
             }
         }
-        cartItems[product.ID].inCart = 1
+        cartItems[product.ID].inCart += 1
     } else {
         product.inCart = 1;
         cartItems = {
@@ -117,48 +117,65 @@ function cartNumbers(product) {  // fara i gegnum localStorage og bæta við 1 e
     offerCheck= JSON.parse(offerCheck);
     productNumbers = parseInt(productNumbers);
     
-    count = localStorage.getItem('offerCount')
+    let count = localStorage.getItem('offerCount')
 
     // if(product.ID > 500)
+    let cartNum = localStorage.getItem('cartNumbers')
+    cartNum = parseInt(cartNum);
+    if(count) { 
+        let offCount = localStorage.getItem('offerCount');
 
-    if(!count) { 
-        localStorage.setItem('offerCount', 1);
+        // offCount = JSNO
+        offCount = parseInt(offCount);
+
+        localStorage.setItem('offerCount',offCount + 1);
+
         let counter = localStorage.getItem('offerCount')
-        let cartNum = localStorage.getItem('cartNumbers')
+        
         // localStorage.setItem('cartNumbers', cartNum+1)
         
-        // if(productNumbers) {
-            localStorage.setItem('cartNumbers',  + 1);
-            document.querySelector('.cart span').textContent = productNumbers + 1;
+        if(productNumbers) {
+        // localStorage.setItem('cartNumbers', productNumbers  + 1);
+        document.querySelector('.cart span').textContent = productNumbers + 1;
             
-        // }}
+        }
 
         // localStorage.setItem('cartNumbers', 1);
-        document.querySelector('.cart span').textContent = 1;
-        // setItems(product);
-        // for (let i=0; i < 600; i++) {
-        //     if(offerCheck.ID > 500){  return console.log("retttt");} 
-        // }
+        document.querySelector('.cart span').textContent = productNumbers + 1;
    
-
     
-        // if(product.ID >500 && productNumbers == null ){
-        //     localStorage.setItem('cartNumbers', 1);
-        //     document.querySelector('.cart span').textContent = 1;
-        //     setItems(product);
-        // }
+     }
+     let offerL = 1;
+     let counter = 0;
+     if(offerCheck){ offerL = offerCheck.length}
 
-        // if(product.ID >500 && productNumbers >= 1) {
-        //     localStorage.setItem('cartNumbers', productNumbers + 1);
-        //     document.querySelector('.cart span').textContent = productNumbers + 1;
-        //     setItems(product);
-        // } 
-    
-     }setItems(product)
-        console.log("ASDASDASDSAD --<-<--<-<", offerCheck.length)
+     for (let i=0; i < offerL; i++) {
+        
+        if(offerCheck) {
+            if(offerCheck.ID > 500){ counter += 1 }
+            // counter += 1 
+        } 
+     }
+
+     reCart(counter)
+     setItems(product)
+        // console.log("ASDASDASDSAD --<-<--<-<", offerCheck.length)
      ;}
 
 
+function reCart(counter) {
+    let cartNum = localStorage.getItem('cartNumbers')
+    if(cartNum){
+        cartNum = parseInt(cartNum)
+        cartNum = cartNum+counter
+        localStorage.setItem('cartNumbers',cartNum+1)
+    } else {
+        localStorage.setItem('cartNumbers',cartNum+1)
+    }
+    
 
+    location.reload()
+
+}
 
 
