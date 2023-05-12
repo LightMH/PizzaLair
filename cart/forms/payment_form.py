@@ -17,7 +17,12 @@ class PaymentForm(forms.Form):
                               'required': "Vinsamlegast fylltu inn CVC"
                           }
                           )
-    expiry_date = forms.CharField(label="CVC ", max_length=5, min_length=5, required=True,
+    expiry_month = forms.CharField(label="CVC ", max_length=2, min_length=2, required=True,
+                                  error_messages={
+                                      'required': "Vinsamlegast settu inn gildistíma"
+                                  }
+                                  )
+    expiry_year = forms.CharField(label="CVC ", max_length=2, min_length=2, required=True,
                                   error_messages={
                                       'required': "Vinsamlegast settu inn gildistíma"
                                   }

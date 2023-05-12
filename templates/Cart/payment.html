@@ -24,9 +24,9 @@
         </div>
 
         <div class="form-group">
-            <label class="exp-date" for="{{ form.expiry_date.id_for_label }}">Gildistími (mm/áá):</label>
-            {{ form.expiry_date }}
-            {{ form.expiry_date.errors }}
+            <label class="exp-date-p1" for="{{ form.expiry_date.id_for_label }}">Gildistími (mm/áá): </label>
+            {{ form.expiry_month }}/{{ form.expiry_year }}
+            {{ form.expiry_month.errors }}
         </div>
 
         <div class="form-group">
