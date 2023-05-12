@@ -1,7 +1,6 @@
 .confirmationHeader {
     background-color: crimson;
     color: white;
-    font-family: "Book Antiqua";
     font-size: x-large;
     text-align: center;
     align-items: center;
@@ -25,13 +24,9 @@ body {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     line-height: 1.5em;
-    /*   background:#E0E4CC; */
     background: white;
-    /* background: -moz-linear-gradient(-45deg, #69d2e7 0%, #a7dbd8 25%, #e0e4cc 46%, #e0e4cc 54%, #f38630 75%, #fa6900 100%);
-    background: -webkit-linear-gradient(-45deg, #69d2e7 0%,#a7dbd8 25%,#e0e4cc 46%,#e0e4cc 54%,#f38630 75%,#fa6900 100%);
-    background: linear-gradient(135deg, #69d2e7 0%,#a7dbd8 25%,#e0e4cc 46%,#e0e4cc 54%,#f38630 75%,#fa6900 100%); */
-
 }
+
 
 hr {
     border: none;
@@ -41,6 +36,7 @@ hr {
       display:block;
       margin-left:0; */
 }
+
 
 h1 {
     margin: 12px;
@@ -54,9 +50,11 @@ h1 {
     border-radius: 5px;
 }
 
+
 .productcont {
     display: flex;
 }
+
 
 .product {
     padding: 1em;
@@ -65,12 +63,14 @@ h1 {
     border-radius: 5px;
 }
 
+
 .cart-container {
     border: 1px solid #E0E4CC;
     border-radius: 5px;
     margin-top: 1em;
     padding: 1em;
 }
+
 
 button, input[type="submit"] {
     border: 1px solid #FA6900;
@@ -83,12 +83,14 @@ button, input[type="submit"] {
     transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
+
 button:hover, button:focus, button:active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
     background: #A7DBD8;
     border-color: #69D2E7;
     color: #000;
     cursor: pointer;
 }
+
 
 table {
     font-size: large;
@@ -121,6 +123,7 @@ table td, table th {
     padding: 1em 0;
     align-self: center;
     font-size: large;
+    gap: 660px;
 }
 
 #emptycart {
@@ -145,6 +148,23 @@ table td:nth-last-child(1) {
 }
 
 .changeOrderBtn {
-    margin-top: 25px;
-    float: left;
+    width: 200px;
+    height: fit-content;
+    border-radius: 20px;
+    border-color: darkred;
+    background: darkred;
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.confirmBtn {
+    width: 200px;
+    height: fit-content;
+    border-radius: 20px;
+    border-color: darkred;
+    background: darkred;
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }

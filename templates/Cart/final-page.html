@@ -3,7 +3,8 @@
 {% block content %}
     <div class="orderContainer">
     <h4 class="orderDelivered">Takk fyrir að panta á Eldey!</h4>
-    <h4 class="orderDelivered">Pöntunin hefur verið móttekin og áætlaður biðtími er 20 mín.</h4>
+    <h4 class="orderDelivered">Pöntunin hefur verið móttekin og sms um afhendingartíma
+                                hefur verið sent í síma {{ user.customeraccount.phone_number }} :)</h4>
     </div>
     <div imageContainer>
         <img class="ovenImg" src="/static/images/oven_img.jpg" alt="oven image">
