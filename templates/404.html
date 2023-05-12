@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+<link rel="stylesheet" href="css/errors.css">
     <div class="errorMsg">
         <h1>ÚPPS, það hefur komið upp villa</h1>
         <p>Svo virðist sem sú síða sem þú ert að leita að sé ekki til. Því miður.</p>
+        <a class="btn" href="{% url 'home-index' %}">Fara á Forsíðiu</a>
     </div>
 {% endblock %}
