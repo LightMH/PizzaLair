@@ -43,6 +43,3 @@ def id_index(request, id):
     return render(request, 'menu/details.html', {
         'pizza': get_object_or_404(Pizza, pk=id)
     })
-
-
-    
