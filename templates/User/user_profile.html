@@ -3,11 +3,11 @@
     <link rel="stylesheet" href="/static/css/user.css">
     <h2 class="userHeader">Halló {{ user.customeraccount.username }}!</h2>
     <img class="profilePic" src="{{ user.customeraccount.profile_image }}" alt="Prófílmynd">
-
+    <p>Notandanafn þitt er {{ user.username }}. <br> Hér getur þú breytt gælunafni þínu á síðunni.</p>
     <form class="form form-horizontal" method="post">
         {% csrf_token %}
         <div class="form-group">
-            <label class="username" for="{{ form.username.id_for_label }}">Notandanafn:</label>
+            <label class="username" for="{{ form.username.id_for_label }}">Gælunafn:</label>
             {{ form.username }}
         </div>
 
