@@ -1,9 +1,6 @@
 <link rel="stylesheet" href="/static/css/confirmation.css">
 {% extends 'base.html' %}
 {% block content %}
-    <div class="confirmationContainer">
-        <h4 class="confirmationHeader">Yfirlit yfir pöntun</h4>
-    </div>
     <div class="container">
         <div class="cart-container divContainer">
             <h2 class="cartHeader">Mín pöntun</h2>
@@ -48,7 +45,7 @@
                 <button class="changeOrderBtn">Breyta pöntun</button>
             </a>
             <div class="cart-buttons">
-                <a href="{% url 'final-index' %}">
+                <a class="check_cart" href="{% url 'final-index' %}">
                     <button id="checkout" class="confirmBtn">Staðfesta pöntun</button>
                 </a>
             </div>
