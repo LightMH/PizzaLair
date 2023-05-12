@@ -21,3 +21,12 @@ class ContactCreateForm(ModelForm):
             "country": widgets.Select(attrs={'class': 'form-control dropDown', 'required': True},
                                       choices=COUNTRY_CHOICES)
         }
+
+    def clean_contact_info(self):
+        super(ContactCreateForm, self).clean()
+        full_name = self.cleaned_data.get('full_name')
+        if len(full_name) < 5:
+            self._errors['full_name'] = self._error_class([
+                'Minnst 10 stafir í fullu nafni'
+            ])
+        return True

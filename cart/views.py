@@ -15,7 +15,6 @@ def cart_index(request):
     return render(request, 'cart/cart.html')
 
 
-
 def confirmation_index(request):
     return render(request, 'cart/confirmation.html')
 
@@ -42,8 +41,9 @@ def contact_information(request):
     if request.method == 'POST':
         form = ContactCreateForm(data=request.POST)
         if form.is_valid():
-            contact_info = form.save()
-            return redirect('payment-index')
+            if form.clean_contact_info():
+                contact_info = form.save()
+                return redirect('payment-index')
     else:
         form = ContactCreateForm()
     return render(request, 'cart/contact_information.html', {
