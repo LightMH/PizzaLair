@@ -1,6 +1,6 @@
-console.log("Offer JS is Running");
 
-let price = document.getElementById('pizza.price');
+
+let Price = document.getElementById('pizza.price');
 let offerName = document.getElementById('offer.name').innerText;
 let valID = document.getElementById('offer.id').innerText;
 valID = parseInt(valID)  + 500;
@@ -24,16 +24,7 @@ let t1 = "test P1"
 let t2 = "test p2"
 testp.push(t1)
 testp.push(t2)
-// let product = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
-//         {
-//             ID: 1,
-//             OID: valID,
-//             Name: pizzas,
-//             Price: saveInt,
-//             inCart: 0,
-//             OfferName: offerName,
-//         }
-//     ];
+
 
 let product = [ // init list með object af pizza id og inCart til að halda um magn af pizzu
         {

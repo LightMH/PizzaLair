@@ -126,12 +126,13 @@ function onLoadO(offer,i) {
     tr.append(tdOffer)
     tr.append(tdName)
     tr.appendChild(tdPrice)
+    if(offer){
     tdOffer.innerText = offer.OfferName
     tdName.innerText = offer.Name
-    tdPrice.innerText = offer.Price
-    document.querySelector('.totalprice span').textContent = totalPrice;
+    tdPrice.innerText = offer.Price}
+    // document.querySelector('.totalprice span').textContent = totalPrice;
     document.querySelector('.magn span').textContent = items;
-    document.querySelector('.totalprice span').textContent = totalPrice;
+    // document.querySelector('.totalprice span').textContent = totalPrice;
 
 }
 function empty() {
@@ -189,6 +190,11 @@ function addPizza(button) {
 }
 
 
-onLoadC()
-onLoadO()
+C = localStorage.getItem('productsInCart')
+if(C){
+    onLoadC()
+    onLoadO()
+}
+// onLoadC()
+// onLoadO()
 onLoadCartNumbers()
