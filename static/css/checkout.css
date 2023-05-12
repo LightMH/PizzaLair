@@ -55,14 +55,18 @@ main {
     width: 40%;
 }
 
+.cardName {
+    width: 135px;
+}
+
 .cvc {
     margin-bottom: 20px;
     margin-right: 20px;
-    width: 82px;
+    width: 115px;
 }
 
 .cardNumber {
-    width: 102px;
+    width: 135px;
 }
 
 .header {
